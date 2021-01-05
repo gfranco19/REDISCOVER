@@ -8,14 +8,16 @@ function NavTabs() {
   const location = useLocation();
 
   return (
-    <ul className="nav nav-tabs">
-      <li className="nav-item">
-        <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="collapse navbar-collapse" id="navbarNav">
+    <ul className="navbar-nav">
+      <li className="nav-item active">
+      <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
         </Link>
       </li>
       <li className="nav-item">
-        <Link
+      <Link
           to="/haunted"
           className={location.pathname === "/haunted" ? "nav-link active" : "nav-link"}
         >
@@ -23,7 +25,7 @@ function NavTabs() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link
+      <Link
           to="/historical"
           className={location.pathname === "/historical" ? "nav-link active" : "nav-link"}
         >
@@ -31,7 +33,7 @@ function NavTabs() {
         </Link>
       </li>
       <li className="nav-item">
-        <Link
+      <Link
           to="/film"
           className={location.pathname === "/film" ? "nav-link active" : "nav-link"}
         >
@@ -39,6 +41,40 @@ function NavTabs() {
         </Link>
       </li>
     </ul>
+  </div>
+</nav>
+
+    // <ul className="nav nav-tabs">
+    //   <li className="nav-item">
+    //     <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>
+    //       Home
+    //     </Link>
+    //   </li>
+    //   <li className="nav-item">
+    //     <Link
+    //       to="/haunted"
+    //       className={location.pathname === "/haunted" ? "nav-link active" : "nav-link"}
+    //     >
+    //       Haunted
+    //     </Link>
+    //   </li>
+    //   <li className="nav-item">
+    //     <Link
+    //       to="/historical"
+    //       className={location.pathname === "/historical" ? "nav-link active" : "nav-link"}
+    //     >
+    //       Historical
+    //     </Link>
+    //   </li>
+    //   <li className="nav-item">
+    //     <Link
+    //       to="/film"
+    //       className={location.pathname === "/film" ? "nav-link active" : "nav-link"}
+    //     >
+    //       Film/Tv
+    //     </Link>
+    //   </li>
+    // </ul>
   );
 }
 
