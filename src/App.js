@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavTabs from "./component/NavTabs";
-import Haunted from "./component/pages/hauntedPlaces/Haunted";
-import Historical from "./component/pages/historicalPlaces/Historical";
-import Film from "./component/pages/tvFilmPlaces/Film";
+import Haunted from "./pages/hauntedPlaces/Haunted";
+import Historical from "./pages/historicalPlaces/Historical";
+import Film from "./pages/tvFilmPlaces/Film";
 import Welcome from "./welcomePage/Welcome";
 
 function App() {
