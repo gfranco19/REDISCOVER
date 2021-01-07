@@ -10,7 +10,6 @@ function App() {
   return (   
   <Router>
     <div>
-    <p>Welcome to the Homepage</p>
     <NavTabs />
     <Route exact path = "/" component ={Welcome} />
     <Route path = "/haunted" component ={Haunted} />
