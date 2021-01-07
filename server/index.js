@@ -34,3 +34,5 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 // avoid warnings in the console //
 
 mongoose.set('useFindAndModify', false );
+
+// to do merge with client side // 
