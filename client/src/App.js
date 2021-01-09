@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Haunted from "./pages/Haunted/Haunted";
 import Historical from "./pages/Historical/Historical";
 import Film from "./pages/Film/Film";
-import Welcome from "./pages/welcomePage/Welcome";
+import Welcome from "./pages/IndexPage/Index";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Example from "./pages/Example/Example"

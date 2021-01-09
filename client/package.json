@@ -8,10 +8,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "axios": "^0.21.1",
-<<<<<<< HEAD:client/package.json
-=======
     "bootstrap": "^4.5.3",
->>>>>>> 95f6ea116ee14c38cf7dcd99bc36ae2b7ffe8ae5:package.json
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",

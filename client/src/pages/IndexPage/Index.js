@@ -1,11 +1,11 @@
 import React from "react";
-import "./Welcome.css";
+import "./Index.css";
 import { Button } from "react-bootstrap";
 import whitelogo from "../../assets/images/whitelogo.png"
 import { Link } from "react-router-dom";
 import NavTabs from "../../components/NavTabs/NavTabs";
 
-function Welcome() {
+function Index() {
     return (
         <div>
             <NavTabs />
@@ -29,4 +29,4 @@ function Welcome() {
     );
 }
 
-export default Welcome;
+export default Index;
