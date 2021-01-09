@@ -97,29 +97,29 @@ $.get("/api/").then(data => {
     });
 
 
-    for (let i = 0; i < uploadFileName.length; i++){
-        const el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundImage = `url("./img/pin.png")`;
-        el.style.width = geojson.features[i].properties.iconSize[0] + 'px';
-        el.style.height = geojson.features[i].properties.iconSize[1] + 'px'
+//     for (let i = 0; i < uploadFileName.length; i++){
+//         const el = document.createElement('div');
+//         el.className = 'marker';
+//         el.style.backgroundImage = `url("./img/pin.png")`;
+//         el.style.width = geojson.features[i].properties.iconSize[0] + 'px';
+//         el.style.height = geojson.features[i].properties.iconSize[1] + 'px'
 
-        const animalCreated = animalArray[i].createdAt;
-        date = new Date(animalCreated);
-        entireDateString = date.toDateString()
+//         const animalCreated = animalArray[i].createdAt;
+//         date = new Date(animalCreated);
+//         entireDateString = date.toDateString()
 
-        const createHTML = `
-        <div class="animal_popup">
-            <h1>${animalArray[i].animal_species}</h1>
-            <p>${animalArray[i].note}</p>
-            <p>Found by: ${animalArray[i].foundByUser}</p>
-            <p>Created: ${entireDateString}</p>
-            <img src="https://wildlife-observations-img-db.s3-us-west-1.amazonaws.com/${animalArray[i].picture}" >
-        </div>`
+//         const createHTML = `
+//         <div class="animal_popup">
+//             <h1>${animalArray[i].animal_species}</h1>
+//             <p>${animalArray[i].note}</p>
+//             <p>Found by: ${animalArray[i].foundByUser}</p>
+//             <p>Created: ${entireDateString}</p>
+//             <img src="https://wildlife-observations-img-db.s3-us-west-1.amazonaws.com/${animalArray[i].picture}" >
+//         </div>`
 
-        new mapboxgl.Marker(el)
-        .setLngLat(geojson.features[i].geometry.coordinates)
-        .setPopup(new mapboxgl.Popup().setHTML(createHTML))
-        .addTo(map);
-    }
-});
+//         new mapboxgl.Marker(el)
+//         .setLngLat(geojson.features[i].geometry.coordinates)
+//         .setPopup(new mapboxgl.Popup().setHTML(createHTML))
+//         .addTo(map);
+//     }
+// });
