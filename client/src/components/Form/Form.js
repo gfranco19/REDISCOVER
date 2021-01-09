@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
+// dispatch action from post.js //
+import { useDispatch } from 'react-redux';
+
 import useStyles from './styles';
+import { createPost } from '../../actions/posts';
 
 
 
 const Form = () => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
     const classes = useStyles();
+    // allows dispatch actions // 
+    const dispatch = useDispatch();
 
-    const handleSubmit = () => {
+    // when user hit submit it will send a post request with the data they added // 
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
+        dispatch(createPost(postData));
 
     }
 
@@ -21,7 +30,7 @@ const Form = () => {
     return(
         <Paper class={classes.paper}>
         <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-        <Typography varient='h6'>Upload your photo</Typography>
+        <Typography varient='h6'>Have a  place to share? Upload it below:</Typography>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
         <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
