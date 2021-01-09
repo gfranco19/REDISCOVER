@@ -1,18 +1,27 @@
-import React from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core"
+import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import NavTabs from "./components/NavTabs";
+import Haunted from "./pages/HauntedPlaces/Haunted";
+import Historical from "./pages/HistoricalPlaces/Historical";
+import Film from "./pages/TvFilmPlaces/Film";
+import Welcome from "./welcomePage/Welcome";
 
-import UserUploads from "./images/UserUploads.png"
-
-const App = () => {
-  return(
-    <Container maxidth="lg">
-      <AppBar position="static" color="inherit">
-        <Typography variant="h2" align="center">This will be the Homepage?</Typography>
-        <img src={UserUploads} alt="uploads" height="180" />
-      </AppBar>
-    </Container>
-  )
+function App() {
+  return (   
+  <Router>
+    <div>
+    <NavTabs />
+    <Route exact path = "/" component ={Welcome} />
+    <Route path = "/haunted" component ={Haunted} />
+    <Route path = "/historical" component ={Historical} />
+    <Route path = "/film" component ={Film} />
+    {/* possible favorites page */}
+    {/* <Route exact path = "/favorites" component ={Favorite} /> */}
+    </div>
+  </Router>
+ 
+    
+  );
 }
-
 
 export default App;
