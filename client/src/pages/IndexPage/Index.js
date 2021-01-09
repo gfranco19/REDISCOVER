@@ -1,12 +1,12 @@
 
 import React from "react";
 
-function Welcome () {
+function Index () {
     return (
         <div>
-            <h1>Hello _____</h1>
+            <h1></h1>
         </div>
     );
 }
 
-export default Welcome;
+export default Index;

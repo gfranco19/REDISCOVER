@@ -4,7 +4,7 @@ import NavTabs from "./components/NavTabs";
 import Haunted from "./pages/HauntedPlaces/Haunted";
 import Historical from "./pages/HistoricalPlaces/Historical";
 import Film from "./pages/TvFilmPlaces/Film";
-import Welcome from "./welcomePage/Welcome";
+import Welcome from "./pages/IndexPage/Index";
 
 function App() {
   return (   
