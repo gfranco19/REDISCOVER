@@ -18,6 +18,7 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        <Uploads />,
+        <Uploads />
+        <App />,
     </Provider>,
     document.getElementById('root'));
