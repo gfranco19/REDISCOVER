@@ -10,7 +10,7 @@ import UserUploads from "./images/UserUploads.png";
 import useStyles from './styles';
 
 
-const App = () => {
+const Uploads = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ const App = () => {
   return(
     <Container maxidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Uploads<br /> </Typography>
+        <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography>
         <img src={UserUploads} alt="uploads" height="60" />
       </AppBar>
       <Grow in>
@@ -41,4 +41,4 @@ const App = () => {
 }
 
 
-export default App;
+export default Uploads;

@@ -9,13 +9,13 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers'
 
-import App from "./App"
+import Uploads from "./Uploads"
 
 // setup the redux // 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />,
+        <Uploads />,
     </Provider>,
     document.getElementById('root'));
