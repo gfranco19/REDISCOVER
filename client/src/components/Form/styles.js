@@ -4,6 +4,7 @@ export default makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
+      background: "white"
     },
   },
   paper: {
