@@ -22,7 +22,7 @@ app.use(cors());
 // connect server to real database (mongo) to host our database on their cloud not local //
 
 // before deployment store credentials //
-const CONNECTION_URL = 'mongodb+srv://Rediscover:Rediscover1234@cluster0.6ihq7.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const CONNECTION_URL = 'mongodb+srv://rediscover-admin:FupQB80e5obaPerW@rediscover.zqz0o.mongodb.net/Rediscover?retryWrites=true&w=majority'
 
 const PORT = process.env.PORT || 5000;
 
