@@ -15,12 +15,15 @@ body {
 .card-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    color: rgb(85, 85, 85);
 }
 
 .card {
     margin-top: 80px;
     margin-left: 10px;
     margin-right: 10px;
+    color: rgb(85, 85, 85);
+
 }
 
 .example {
@@ -34,10 +37,7 @@ body {
     font-family: 'Oswald', sans-serif;   
     font-size: 22px;
     text-align: center;
-    /* display: flex;  */
-    /* flex-direction: column; */
-    /* justify-content: center;
-    align-items: center; */
+    color: rgb(85, 85, 85);
 }
 
 h5 {
@@ -51,21 +51,12 @@ h5 {
 .card-deck {
     margin: 0px;
     width: 80%;
+    color: rgb(85, 85, 85);
+
     /* margin-bottom: 80px; */
 }
 
 .row {
     justify-content: center;
 }
-
-/* .btn.btn-secondary {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    text-align: center;
-    width: 50%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    display: block;
-  } */
 
