@@ -6,6 +6,7 @@ import cors from 'cors';
 
 //our globals//
 import postRoutes from './routes/posts.js'
+import { Passport } from 'passport';
 
 // initialize the app //
 const app = express(); 
