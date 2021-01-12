@@ -12,14 +12,15 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DarkMode from './components/darkMode/darkMode';
 
-// import Uploads from "./Uploads"
+import Uploads from "./Uploads"
 
 // setup the redux // 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        {/* <Uploads /> */}
+        <Uploads />
+        <DarkMode />
         <App />
         <DarkMode />
     </Provider>,
