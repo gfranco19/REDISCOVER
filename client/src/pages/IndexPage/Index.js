@@ -4,7 +4,6 @@ import { Button } from "react-bootstrap";
 import whitelogo from "../../assets/images/whitelogo.png"
 import { Link } from "react-router-dom";
 import NavTabs from "../../components/NavTabs/NavTabs";
-import Footer from "../../components/Footer/Footer"
 
 function Index() {
     return (
@@ -24,7 +23,7 @@ function Index() {
                     <Button variant="light" size="lg" className='welcomeButton'><Link to="./Register">register</Link></Button>{' '}
                     <Button variant="light" size="lg" className='welcomeButton'><Link to="./Login">login</Link></Button>{' '}
                 </div>
-            <Footer />
+
             </div>
         </div>
     );

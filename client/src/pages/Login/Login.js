@@ -35,11 +35,9 @@ function Login() {
 
                     </Form>
                 </Card.Body>
-
             </Card>
 
         </div>
-
     );
 }
 

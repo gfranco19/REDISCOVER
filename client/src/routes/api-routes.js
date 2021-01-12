@@ -63,14 +63,14 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/tvFilmPlaces", async (req, res) => {
+  app.get("/api/filmPlaces", async (req, res) => {
     if (!req.user) {
       res.json({});
     } else {
-      const currentTvFilmPlaces = await db.TvFilmPlace.findAll()
-      const currentTvFilmPlaceArray = []
-      currentTvFilmPlaces.forEach(TvFilmPlace => currentTvFilmPlaceArray.push(TvFilmPlace.dataValues));
-      res.json(currentTvFilmPlaceArray);
+      const currentFilmPlaces = await db.filmPlace.findAll()
+      const currentFilmPlaceArray = []
+      currentFilmPlaces.forEach(TvFilmPlace => currentFilmPlaceArray.push(FilmPlace.dataValues));
+      res.json(currentFilmPlaceArray);
     }
   });
  

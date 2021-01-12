@@ -8,10 +8,8 @@ import { Link } from "react-router-dom";
 function Register() {
 
     return (
-        
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-
-            <Card style={{ width: '28rem' }}>
+           <Card style={{ width: '28rem' }}>
                 <Card.Body className="registerFlex">
                     <Form>
                         <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
@@ -38,7 +36,7 @@ function Register() {
                 </Card.Body>
             </Card>
         </div>
-
+      
     );
 }
 
