@@ -8,7 +8,6 @@ const Posts = () => {
     const posts = useSelector((state) => state.posts);
     const classes = useStyles();
 
-<<<<<<< HEAD
     // mobile devices comp for Grids // 
     return (
         !posts.length ? <CircularProgress /> : (
@@ -20,15 +19,6 @@ const Posts = () => {
                     ))}
             </Grid>
         )
-=======
-    console.log(posts);
-    return(
-            <>
-                <h1 className={classes.heading} >Posts</h1>
-                <Post />
-                <Post />
-            </>
->>>>>>> fd740b5e25249cf9e174509ddc5220091790d1ae
     );
 }
 
