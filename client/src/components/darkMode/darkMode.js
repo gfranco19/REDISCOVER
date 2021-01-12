@@ -9,6 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 import "./darkMode.css"
 
 const useStyles = makeStyles(theme => ({
+  
 }));
 
 function DarkMode() {
@@ -16,10 +17,11 @@ function DarkMode() {
   const classes = useStyles();
   const icon = !theme ? <Brightness7Icon /> : <Brightness3Icon />;
   const appliedTheme = createMuiTheme(theme ? light : dark);
+
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <Paper>
+      <Paper elevation={0}>
         <div className={classes.root}>
           <IconButton 
             edge="end"
