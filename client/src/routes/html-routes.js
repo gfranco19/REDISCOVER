@@ -27,8 +27,8 @@ module.exports = function(app) {
     res.render("/historicalPlaces");
   });
 
-  app.get("/filmPlaces", isAuthenticated, (req, res) => {
-    res.render("/filmPlaces");
+  app.get("/tvFilmPlaces", isAuthenticated, (req, res) => {
+    res.render("/tvFilmPlaces");
   });
 
   app.get("/locationSelect", isAuthenticated, (req, res) => {

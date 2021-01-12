@@ -9,7 +9,7 @@ import Index from "./pages/IndexPage/Index";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Example from "./pages/Example/Example";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Uploads from './Uploads';
 
 function App() {

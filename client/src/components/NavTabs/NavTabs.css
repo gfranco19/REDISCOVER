@@ -1,4 +1,4 @@
-.navbar {
-    font-family: 'Fira Mono', monospace;
-    font-size: 26px;
+.navbar, .navbar-brand {
+    font-family: 'Oswald', sans-serif;   
+    font-size: 22px;
 }
