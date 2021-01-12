@@ -2,6 +2,7 @@
 import { Link, useLocation } from "react-router-dom";
 import "./NavTabs.css";
 import { Navbar } from "react-bootstrap";
+import DarkMode from '../darkMode/darkMode';
 
 function NavTabs() {
   const location = useLocation();
@@ -11,6 +12,7 @@ function NavTabs() {
     <Navbar bg="light" variant="light" expand="lg" className="navFont">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
+        
         <ul className="navbar-nav">
           <li className="nav-item active">
             <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>Home</Link>
@@ -28,7 +30,8 @@ function NavTabs() {
           <li className="nav-item"><Link to="/example" className={location.pathname === "/example" ? "nav-link active" : "nav-link"}>Example</Link>
           </li>
         </ul>
-      </Navbar.Collapse>
+       
+      </Navbar.Collapse><DarkMode />
     </Navbar>
   );
 }
