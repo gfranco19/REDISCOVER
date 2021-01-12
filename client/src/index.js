@@ -19,8 +19,13 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
+<<<<<<< HEAD
         <Uploads />
         <DarkMode />
+=======
+        {/* <Uploads /> */}
+>>>>>>> fd740b5e25249cf9e174509ddc5220091790d1ae
         <App />
+        <DarkMode />
     </Provider>,
     document.getElementById('root'));

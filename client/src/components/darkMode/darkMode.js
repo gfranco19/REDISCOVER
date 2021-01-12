@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import Brightness7Icon from "@material-ui/icons/Brightness7";
 import { CssBaseline } from '@material-ui/core';
+import "./darkMode.css"
 
 const useStyles = makeStyles(theme => ({
 }));
@@ -20,7 +21,7 @@ function DarkMode() {
       <CssBaseline />
       <Paper>
         <div className={classes.root}>
-          <IconButton
+          <IconButton 
             edge="end"
             color="inherit"
             aria-label="mode"

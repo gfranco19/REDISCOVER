@@ -1,15 +1,14 @@
 import React from 'react';
-import { Grid, CircularProgress } from '@material-ui/core'
 // fetching the data from the global redux store //
 import { useSelector } from 'react-redux';
 import Post from "./Post/Post";
 import useStyles from './styles';
 
-
-const Posts = (post) => {
+const Posts = () => {
     const posts = useSelector((state) => state.posts);
     const classes = useStyles();
 
+<<<<<<< HEAD
     // mobile devices comp for Grids // 
     return (
         !posts.length ? <CircularProgress /> : (
@@ -21,7 +20,16 @@ const Posts = (post) => {
                     ))}
             </Grid>
         )
+=======
+    console.log(posts);
+    return(
+            <>
+                <h1 className={classes.heading} >Posts</h1>
+                <Post />
+                <Post />
+            </>
+>>>>>>> fd740b5e25249cf9e174509ddc5220091790d1ae
     );
 }
-// console.log(posts);
+
 export default Posts;
