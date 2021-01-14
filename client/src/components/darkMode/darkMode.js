@@ -48,4 +48,4 @@ export const dark = {
     type: "dark"
   }
 };
-export default React.memo(DarkMode);
+export default (DarkMode);
