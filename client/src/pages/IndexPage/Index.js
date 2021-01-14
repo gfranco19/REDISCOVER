@@ -8,11 +8,11 @@ import { Link } from "react-router-dom";
 function Index() {
     return (
         <div>
-                <div className="welcomeBackground">
-                    <br /><br /><br /><br /><br />
+            <div className="welcomeBackground">
+                <br /><br /><br /><br /><br />
 
-                    <div><img src={whitelogo} alt="logo" id="logo" class='center' />
-                        <br /><br />
+                <div><img src={whitelogo} alt="logo" id="logo" className='center pulse' />
+                    <br /><br />
 
                         <p class="description">Welcome to a community of urban explorers, <br />discovering the rich and historical world around us -  <br />right in our own backyards.</p></div>
 

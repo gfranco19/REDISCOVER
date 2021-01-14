@@ -12,7 +12,7 @@ function NavTabs() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">        
         <ul className="navbar-nav">
-          <li className="nav-item active">
+          <li className="nav-item">
             <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>Home</Link>
           </li>
           <li className="nav-item"><Link to="/account" className={location.pathname === "/account" ? "nav-link active" : "nav-link"}>Account</Link>
