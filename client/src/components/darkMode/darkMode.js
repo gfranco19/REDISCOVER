@@ -9,24 +9,27 @@ import { CssBaseline } from '@material-ui/core';
 import "./darkMode.css"
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    "& .MuiPaper-root": {
+      borderRadius: "100px",
+      backgroundColor: "transparent"
+    }
+  }
 }));
+
 
 function DarkMode() {
   const [theme, setTheme] = useState(true);
   const classes = useStyles();
   const icon = !theme ? <Brightness7Icon /> : <Brightness3Icon />;
   const appliedTheme = createMuiTheme(theme ? light : dark);
+
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <Paper>
+      <Paper elevation={0} >
         <div className={classes.root}>
-          <IconButton 
-            edge="end"
-            color="inherit"
-            aria-label="mode"
-            onClick={() => setTheme(!theme)}
-          >
+          <IconButton edge="end" color="inherit" aria-label="mode" onClick={() => setTheme(!theme)}>
             {icon}
           </IconButton>
         </div>
@@ -46,5 +49,7 @@ export const dark = {
   }
 };
 
+
 //Change in darkmode//
 export default DarkMode;
+

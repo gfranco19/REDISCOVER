@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+=======
+.MuiIconButton-root:focus {
+    outline: none !important;
+    background-color: none;
+    /* box-shadow: transparent; */
+  }
+
+.MuiPaper-root {
+  background-color: none!important;
+}
+     
+  .MuiIconButton-edgeEnd {
+      margin-right: 0px!important;
+  }
+
+
+
+
+>>>>>>> f41098b07fb6c8b75fa7420b5bf3577d57c1cfda
