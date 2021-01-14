@@ -1,40 +1,42 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
 
 //our globals//
-import postRoutes from './routes/posts.js'
+import postRoutes from "./routes/posts.js";
+import apiRoutes from "./routes/api-routes.js";
 
 // initialize the app //
-const app = express(); 
+const app = express();
 
-
-
-// sets up body parser to properly send requests // 
-app.use(bodyParser.json({limit: "30mb", extended: true }))
-app.use(bodyParser.urlencoded({limit: "30mb", extended: true }))
+// sets up body parser to properly send requests //
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-// all routes within the postsRoutes will start with posts example not localhost 5000 but localhost:5000/posts specify after cors // 
-app.use('/posts', postRoutes)
-
+// all routes within the postsRoutes will start with posts example not localhost 5000 but localhost:5000/posts specify after cors //
+app.use("/posts", postRoutes);
+app.use(apiRoutes);
 
 // connect server to real database (mongo) to host our database on their cloud not local //
 
 // before deployment store credentials //
-const CONNECTION_URL = 'mongodb+srv://Rediscover:Rediscover1234@cluster0.6ihq7.mongodb.net/<dbname>?retryWrites=true&w=majority'
+const CONNECTION_URL =
+  "mongodb+srv://Rediscover:Rediscover1234@cluster0.6ihq7.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true })
-.then(() => app.listen(PORT, () => console.log(`Server is Alive on port: ${PORT}`)))
-// if fails catch the error // 
-.catch((error) => console.log(error.message));
+mongoose
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () => console.log(`Server is Alive on port: ${PORT}`))
+  )
+  // if fails catch the error //
+  .catch((error) => console.log(error.message));
 
 // avoid warnings in the console //
 
-mongoose.set('useFindAndModify', false );
+mongoose.set("useFindAndModify", false);
 
-// to do merge with client side // 
+// to do merge with client side //
