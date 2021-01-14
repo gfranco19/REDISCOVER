@@ -6,7 +6,7 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-
+import DarkMode from "./components/darkMode/darkMode";
 import reducers from './reducers'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,6 +21,5 @@ ReactDOM.render(
         <Uploads />
         <DarkMode />
         <App />
-        <DarkMode />
     </Provider>,
     document.getElementById('root'));
