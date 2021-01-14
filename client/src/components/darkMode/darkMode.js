@@ -48,4 +48,4 @@ export const dark = {
     type: "dark"
   }
 };
-export default (DarkMode);
+export default DarkMode;
