@@ -11,14 +11,15 @@ import reducers from './reducers'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import Uploads from "./Uploads"
+import Uploads from "./Uploads"
 
 // setup the redux // 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        {/* <Uploads /> */}
+        <Uploads />
+        <DarkMode />
         <App />
     </Provider>,
     document.getElementById('root'));
