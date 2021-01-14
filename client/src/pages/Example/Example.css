@@ -8,10 +8,6 @@
     background-size: cover;
 }
 
-body {
-    background-color: rgb(77, 77, 77);
-}
-
 .card-text {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -49,7 +45,7 @@ h5 {
 }
 
 .card-deck {
-    margin: 0px;
+    margin-bottom: 100px;
     width: 80%;
     color: rgb(85, 85, 85);
 

@@ -1,15 +1,14 @@
 .footer {
     text-align: center;
-    color: white;
-    font-size: 30px;
-    font-family: 'Fira Mono', monospace;
-    width: 100%;
+    background-color: transparent;
+    width: 20%;
     position: fixed;
+    margin: auto;
     left: 0;
     right: 0;
     bottom: 0; 
-    padding: 10px;   
 }
+
 
 
   
