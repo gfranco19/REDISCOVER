@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core"
 // this allows us to dispatch an action // 
 import { useDispatch } from 'react-redux';
-
+import './uploads.css';
 import { getPosts } from './actions/posts';
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
