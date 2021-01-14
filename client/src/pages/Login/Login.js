@@ -9,36 +9,35 @@ function Login() {
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-            <Card style={{ width: '28rem' }}>
-                <Card.Body>
-                    <Form>
-                        <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
-                        <br />
+                <Card style={{ width: '28rem' }}>
+                    <Card.Body>
+                        <Form>
+                            <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
+                            <br />
 
-                        <p className="signin">Login to Rediscover</p>
+                            <p className="signin">Login to Rediscover</p>
 
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" />
+                            </Form.Group>
 
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" />
-                        </Form.Group>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" />
+                            </Form.Group>
 
-                        <Button variant="secondary" type="submit" id='loginButton'>
-                            Login
+                            <Button variant="secondary" type="submit" id='loginButton'>
+                                Login
                         </Button>
-                        <p className="redirectRegister"><Link to="./Register" id="a.register">New here? Create an account.</Link></p>
-                        <p className="redirectRegister"><Link to="./">Or go back.</Link></p>
+                            <p className="redirectRegister"><Link to="./Register" id="a.register">New here? Create an account.</Link></p>
+                            <p className="redirectRegister"><Link to="./">Or go back.</Link></p>
 
-                    </Form>
-                </Card.Body>
+                        </Form>
+                    </Card.Body>
 
-            </Card>
-
-        </div>
+                </Card>
+            </div>
 
     );
 }

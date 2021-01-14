@@ -138,14 +138,8 @@ function Example() {
                         </Card>
                     </CardDeck>
                 </div>
-
-
             </div>
-
         </div>
-
-
-
     );
 }
 

@@ -4,11 +4,10 @@
     /* box-shadow: transparent; */
   }
 
- /* .MuiPaper-root {
+.MuiPaper-root {
   background-color: none!important;
-} */
+}
      
-
   .MuiIconButton-edgeEnd {
       margin-right: 0px!important;
   }
