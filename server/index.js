@@ -2,6 +2,11 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import passport from 'passport';
+import passportLocal from 'passport-local';
+import cookieParser from 'cookie-parser';
+import bcrypt from 'bcryptjs';
+import expressSession from 'express-session';
 
 
 //our globals//
