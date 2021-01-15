@@ -8,17 +8,16 @@ import postRoutes from "./routes/posts.js";
 import apiRoutes from "./routes/api-routes.js";
 
 // initialize the app //
-const app = express();
+const app = express(); 
+
+// all routes within the postsRoutes will start with posts example not localhost 5000 but localhost:5000/posts // 
 
 // sets up body parser to properly send requests //
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-// all routes within the postsRoutes will start with posts example not localhost 5000 but localhost:5000/posts specify after cors //
-app.use("/posts", postRoutes);
-app.use(apiRoutes);
-
+app.use('/posts', postRoutes)
 // connect server to real database (mongo) to host our database on their cloud not local //
 
 // before deployment store credentials //

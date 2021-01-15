@@ -29,13 +29,13 @@ class Login extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div         style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+       }}>
+ 
+      <div/>
         <Card style={{ width: "28rem" }}>
           <Card.Body>
             <Form>

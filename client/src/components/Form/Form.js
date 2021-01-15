@@ -28,7 +28,7 @@ const Form = () => {
     }
 
     return(
-        <Paper class={classes.paper}>
+        <Paper className={classes.paper}>
         <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography varient='h6'>Have a  place to share? Upload it below:</Typography>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
@@ -40,7 +40,6 @@ const Form = () => {
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Remove</Button>
         </div>
         </form>
-
 
         </Paper>
     );
