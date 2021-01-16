@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 // dispatch action from post.js //
+
 import { useDispatch, useSelector } from 'react-redux';
+
+
+
+import IconLabelButtons from '../iconButtons/iconButtons'
 
 import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
@@ -43,8 +48,9 @@ const Form = ({ currentId, setCurrentId }) => {
 
     }
 
-    return(
+    return (
         <Paper class={classes.paper}>
+
         <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography varient='h6'>Upload your Place to Share!</Typography>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
@@ -56,6 +62,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Remove</Button>
         </div>
         </form>
+
 
         </Paper>
     );

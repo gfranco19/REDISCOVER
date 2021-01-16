@@ -10,6 +10,11 @@ import Historical from "./pages/Historical/Historical";
 import Film from "./pages/Film/Film";
 import Example from "./pages/Example/Example";
 import Explore from "./pages/ExplorePage/Explore";
+import Account from "./pages/Account/Account";
+import Misc from "./pages/Misc/Misc";
+
+// import Uploads from "./Uploads";
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,6 +31,8 @@ function App() {
           <Route path="/haunted" component={Haunted} />
           <Route path="/historical" component={Historical} />
           <Route path="/film" component={Film} />
+          <Route path="/misc" component={Misc} />
+          <Route path="/account" component={Account} />
           <Route path="/Example" component={Example} />
       
         <Footer />

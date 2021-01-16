@@ -9,7 +9,7 @@ function Haunted() {
             <NavTabs />
             <div className="hauntedBackground">
                 <br /> <br />
-                <h1>Haunted Locations</h1>
+                <h1>Haunted Places</h1>
             </div>
         </div>
     );
