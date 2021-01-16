@@ -29,7 +29,7 @@ export const createPost = async (req, res) => {
         // async
         await newPost.save();
         // if successful 201
-        res.status(201).JSON(newPost)
+        res.status(201).json(newPost)
 
     } catch (error) {
         res.status(409).json({ message: error.message });
@@ -50,7 +50,7 @@ export const updatePost = async (req, res) => {
 
     let updated = await PostMessage.findOneAndUpdate( filter , update)
    
-    console.log(updated)
+   console.log(creator, tags, likeCount, title, message )
    
     res.json([updated]);
 }

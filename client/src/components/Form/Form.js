@@ -31,6 +31,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
     // when user hit submit it will send a post request with the data they added // 
     const handleSubmit = (e) => {
+        
         e.preventDefault();
 
         if(currentId) {
@@ -41,7 +42,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
         
         
-
+       
     }
 
     const clear = () => {
