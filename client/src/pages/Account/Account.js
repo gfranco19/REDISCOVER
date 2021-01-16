@@ -1,12 +1,12 @@
 import React from "react";
 import "./Account.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavTabs2 from "../../components/NavTabs2/NavTabs2";
+import NavTabs from "../../components/NavTabs/NavTabs";
 
 function Account() {
     return (
         <div>
-            <NavTabs2 />
+            <NavTabs />
             <div className="palmsBackground">
                 <br /> <br />
                 <h1>@username's Account</h1>

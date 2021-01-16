@@ -8,7 +8,7 @@ import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
 // import whitelogo from "./assets/images/whitelogo.png";
 import useStyles from './styles';
-import NavTabs2 from "../src/components/NavTabs2/NavTabs2";
+import NavTabs2 from "./components/NavTabs/NavTabs";
 
 
 const Uploads = () => {

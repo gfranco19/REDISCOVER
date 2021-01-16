@@ -1,6 +1,6 @@
 import React from "react";
 import "./Example.css";
-import NavTabs2 from "../../components/NavTabs2/NavTabs2";
+import NavTabs from "../../components/NavTabs/NavTabs";
 import { Card, CardDeck } from "react-bootstrap";
 import Office from '../../assets/images/office.png';
 import Ferris from '../../assets/images/ferris.png';
@@ -11,7 +11,7 @@ import '../../assets/images/welcome2.png';
 function Example() {
     return (
         <div>
-            <NavTabs2 />
+            <NavTabs />
             <div className="exampleBackground">
                 <div >
                     <br /> <br />

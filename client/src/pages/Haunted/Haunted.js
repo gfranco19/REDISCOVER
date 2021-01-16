@@ -1,12 +1,12 @@
 import React from "react";
 import "./Haunted.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavTabs2 from "../../components/NavTabs2/NavTabs2";
+import NavTabs from "../../components/NavTabs/NavTabs";
 
 function Haunted() {
     return (
         <div>
-            <NavTabs2 />
+            <NavTabs />
             <div className="hauntedBackground">
                 <br /> <br />
                 <h1>Haunted Places</h1>
