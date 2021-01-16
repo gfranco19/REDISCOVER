@@ -1,36 +1,101 @@
-// import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./NavTabs.css";
-import { Navbar } from "react-bootstrap";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import HomeIcon from '@material-ui/icons/Home';
+import ExploreIcon from '@material-ui/icons/Explore';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
+import HelpIcon from '@material-ui/icons/Help';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+import ErrorIcon from '@material-ui/icons/Error';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { Link } from "react-router-dom";
 
-function NavTabs() {
-  const location = useLocation();
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
 
   return (
-
-    <Navbar bg="light" variant="light" expand="lg" className="navFont"> 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">        
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link to="/" className={location.pathname === "/" ? "nav-link active" : "nav-link"}>Home</Link>
-          </li>
-          <li className="nav-item"><Link to="/account" className={location.pathname === "/account" ? "nav-link active" : "nav-link"}>Account</Link>
-          </li>
-          <li className="nav-item"><Link to="/explorer" className={location.pathname === "/explorer" ? "nav-link active" : "nav-link"}>Explorer</Link>
-          </li>
-          <li className="nav-item"><Link to="/haunted" className={location.pathname === "/haunted" ? "nav-link active" : "nav-link"}>Haunted</Link>
-          </li>
-          <li className="nav-item"><Link to="/historical" className={location.pathname === "/historical" ? "nav-link active" : "nav-link"}>Historical</Link>
-          </li>
-          <li className="nav-item"><Link to="/film" className={location.pathname === "/film" ? "nav-link active" : "nav-link"}>Film/TV</Link>
-          </li>
-          <li className="nav-item"><Link to="/example" className={location.pathname === "/example" ? "nav-link active" : "nav-link"}>Example</Link>
-          </li>
-        </ul>      
-      </Navbar.Collapse>
-    </Navbar>
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`scrollable-force-tabpanel-${index}`}
+      aria-labelledby={`scrollable-force-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
   );
 }
 
-export default NavTabs;
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `scrollable-force-tab-${index}`,
+    'aria-controls': `scrollable-force-tabpanel-${index}`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        justifyContent: "center",
+
+      },
+      scroller: {
+        flexGrow: "0"
+      }
+    }));
+    
+
+export default function ScrollableTabsButtonForce() {
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" color="default">
+        <Tabs
+          value={value}
+          classes={{ root: classes.root, scroller: classes.scroller }}
+          onChange={handleChange}
+          variant="scrollable"
+          scrollButtons="on"
+          indicatorColor="primary"
+          textColor="primary"
+          aria-label="scrollable force tabs example"
+        >
+          <Tab component={Link} label="Home" to ="/" icon={<HomeIcon />} {...a11yProps(0)} />
+          <Tab component={Link} label="Explore" to="/explorer" icon={<ExploreIcon />} {...a11yProps(1)} />
+          <Tab component={Link} label="Haunted"  to="/haunted" icon={<ErrorIcon />} {...a11yProps(2)} />
+          <Tab component={Link} label="Historical" to="/historical" icon={<MenuBookIcon />} {...a11yProps(3)} />
+          <Tab component={Link} label="Film" to="/film" icon={<GroupWorkIcon />} {...a11yProps(4)} />
+          <Tab component={Link} label="Misc" to="/misc" icon={<HelpIcon />} {...a11yProps(5)} />
+          <Tab component={Link} label="My Account" to="/account" icon={<AccountCircleIcon />} {...a11yProps(6)} />
+          <Tab component={Link} label="Example" to="/example" icon={<BookmarkIcon />} {...a11yProps(7)} />
+
+
+        </Tabs>
+      </AppBar>
+    </div>
+
+  );
+}
+
+

@@ -6,8 +6,9 @@ import './uploads.css';
 import { getPosts } from './actions/posts';
 import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
-import UserUploads from "./assets/images/UserUploads.png";
+// import whitelogo from "./assets/images/whitelogo.png";
 import useStyles from './styles';
+import NavTabs2 from "./components/NavTabs/NavTabs";
 
 
 const Uploads = () => {
@@ -18,25 +19,37 @@ const Uploads = () => {
     dispatch(getPosts());
   }, [dispatch])
 
-  return(
-    <Container maxidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
+  return (
+    <div className="exploreBackground">
+
+    <div>
+      <NavTabs2 />
+
+        <br/> <br/>
+          <h2>Share your experiences with your fellow explorers!</h2>
+
+    <Container maxwidth="lg">
+      
         <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography>
-        <img src={UserUploads} alt="uploads" height="60" />
-      </AppBar>
+       
+     
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing="3" >
-              <Grid item xs={12} sm={7}>
-                <Posts />
-              </Grid>
-              <Grid item xs={12} sm={4}>
-                  <Form />
-                </Grid>
+            <Grid item xs={12} sm={7}>
+              <Posts />
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <br/> 
+              <Form />
+
+            </Grid>
           </Grid>
         </Container>
       </Grow>
     </Container>
+    </div>
+    </div>
   )
 }
 

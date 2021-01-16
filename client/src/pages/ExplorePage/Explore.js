@@ -5,12 +5,8 @@ function Explore (){
 
     return(
         <div>
-        
 
-        <NavTabs />
         <Uploads />
-
-
 
         </div>
 
