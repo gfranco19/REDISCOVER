@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core"
 // this allows us to dispatch an action // 
 import { useDispatch } from 'react-redux';
@@ -12,6 +12,7 @@ import NavTabs2 from "./components/NavTabs/NavTabs";
 
 
 const Uploads = () => {
+  const [currentId, setCurrentId] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -36,14 +37,14 @@ const Uploads = () => {
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing="3" >
-            <Grid item xs={12} sm={7}>
-              <Posts />
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <br/> 
-              <Form />
 
-            </Grid>
+              <Grid item xs={12} sm={7}>
+                <Posts setCurrentId={setCurrentId} />
+              </Grid>
+              <Grid item xs={12} sm={4}>
+                  <Form currentId={currentId} setCurrentId={setCurrentId} />
+                </Grid>
+
           </Grid>
         </Container>
       </Grow>

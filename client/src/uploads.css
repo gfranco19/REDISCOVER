@@ -1,3 +1,4 @@
+
 .exploreBackground {
     background: url("../src/assets/images/sb2.png");
     background-repeat: no-repeat;
@@ -21,4 +22,5 @@ h2 {
     outline: none !important;
     /* background-color: none; */
   }
+
 
