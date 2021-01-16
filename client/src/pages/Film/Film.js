@@ -8,7 +8,7 @@ function Film() {
             <NavTabs />
             <div className="filmBackground">
                 <br /> <br />
-                <h1>As Seen On The Big Screen</h1>
+                <h1>Film Locations</h1>
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ function Historical() {
             <NavTabs />
             <div className="historyBackground">
                 <br /> <br />
-                <h1>Historical Landmarks</h1>
+                <h1>Historical Sites</h1>
             </div>
         </div>
     );

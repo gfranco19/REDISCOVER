@@ -11,8 +11,20 @@ class Login extends Component {
     password: "",
   };
 
+<<<<<<< HEAD
   handleInputChange = (event) => {
     const { name, value } = event.target;
+=======
+    return (
+
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
+                <Card className="registerCard" style={{ width: '28rem' }} >
+                   
+                    <Card.Body>
+                        <Form>
+                            <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
+                            <br />
+>>>>>>> 5e6c9c009865cdd09ca234025c75042bd0b0239d
 
     // Updating the input's state
     this.setState({
@@ -27,6 +39,7 @@ class Login extends Component {
     axios.post("/api/login", this.state).then(res=> console.log(res))
   };
 
+<<<<<<< HEAD
   render() {
     return (
       <div         style={{
@@ -46,6 +59,13 @@ class Login extends Component {
                 alt="binoculars"
               />
               <br />
+=======
+                            <Button variant="secondary" type="submit" id='loginButton'>
+                                Login
+                        </Button>
+                            <p className="redirectRegister"><Link to="./Register" id="a.register">New here? Create an account.</Link></p>
+                            <p className="redirectRegister"><Link to="./">(or, go back)</Link></p>
+>>>>>>> 5e6c9c009865cdd09ca234025c75042bd0b0239d
 
               <p className="signin">Login to Rediscover</p>
 
