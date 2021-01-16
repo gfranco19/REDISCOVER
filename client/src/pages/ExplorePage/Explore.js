@@ -4,12 +4,8 @@ function Explore (){
 
     return(
         <div>
-
-
-
+            
         <Uploads />
-
-
 
         </div>
 

@@ -1,14 +1,14 @@
 import React from "react";
 import "./Film.css";
-import NavTabs from "../../components/NavTabs/NavTabs";
+import NavTabs2 from "../../components/NavTabs2/NavTabs2";
 
 function Film() {
     return (
         <div>
-            <NavTabs />
+            <NavTabs2 />
             <div className="filmBackground">
                 <br /> <br />
-                <h1>As Seen On The Big Screen</h1>
+                <h1>Film Locations</h1>
             </div>
         </div>
     );

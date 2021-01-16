@@ -1,14 +1,14 @@
 import React from "react";
 import "./Historical.css";
-import NavTabs from "../../components/NavTabs/NavTabs";
+import NavTabs2 from "../../components/NavTabs2/NavTabs2";
 
 function Historical() {
     return (
         <div>
-            <NavTabs />
+            <NavTabs2 />
             <div className="historyBackground">
                 <br /> <br />
-                <h1>Historical Landmarks</h1>
+                <h1>Historical Sites</h1>
             </div>
         </div>
     );

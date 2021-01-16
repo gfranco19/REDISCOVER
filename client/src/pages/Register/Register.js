@@ -9,7 +9,7 @@ function Register() {
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-                <Card style={{ width: '28rem' }}>
+                <Card className="registerCard" style={{ width: '28rem' }}>
 
                     <Card.Body className="registerFlex">
 
@@ -33,7 +33,7 @@ function Register() {
                                 Create account
                         </Button>
                             <p className="redirectRegister"><Link to="./Login">Already a member? Login here.</Link></p>
-                            <p className="redirectRegister"><Link to="./">Or go back.</Link></p>
+                            <p className="redirectRegister"><Link to="./">(or, go back)</Link></p>
                         </Form>
                     </Card.Body>
                 </Card>

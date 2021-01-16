@@ -1,21 +1,21 @@
 import React from "react";
 import "./Example.css";
-import NavTabs from "../../components/NavTabs/NavTabs";
+import NavTabs2 from "../../components/NavTabs2/NavTabs2";
 import { Card, CardDeck } from "react-bootstrap";
 import Office from '../../assets/images/office.png';
 import Ferris from '../../assets/images/ferris.png';
 import madmen from '../../assets/images/madmen.png';
 import ironman from '../../assets/images/ironman.png';
-import '../../assets/images/film1.png';
+import '../../assets/images/welcome2.png';
 
 function Example() {
     return (
         <div>
-            <NavTabs />
-            <div className="filmBackground">
+            <NavTabs2 />
+            <div className="exampleBackground">
                 <div >
                     <br /> <br />
-                    <h1>As Seen On The Big Screen - Example</h1>
+                    <h1>Example</h1>
                 </div>
                 <div className="row">
                     <CardDeck>

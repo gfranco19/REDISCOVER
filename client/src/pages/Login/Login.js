@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 function Login() {
 
     return (
+
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
-                <Card style={{ width: '28rem' }}>
+                <Card className="registerCard" style={{ width: '28rem' }} >
+                   
                     <Card.Body>
                         <Form>
                             <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
@@ -31,7 +33,7 @@ function Login() {
                                 Login
                         </Button>
                             <p className="redirectRegister"><Link to="./Register" id="a.register">New here? Create an account.</Link></p>
-                            <p className="redirectRegister"><Link to="./">Or go back.</Link></p>
+                            <p className="redirectRegister"><Link to="./">(or, go back)</Link></p>
 
                         </Form>
                     </Card.Body>

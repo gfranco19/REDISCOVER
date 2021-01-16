@@ -1,0 +1,18 @@
+.redlandsBackground {
+    background: url("../../assets/images/redlands\ copy.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 55px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'Oswald', sans-serif;   
+}
+
