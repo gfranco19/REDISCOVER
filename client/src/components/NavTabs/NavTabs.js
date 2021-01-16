@@ -52,7 +52,6 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
     root: {
         justifyContent: "center",
-        fontFamily: 'Fira Mono', 
 
       },
       scroller: {
@@ -91,16 +90,12 @@ export default function ScrollableTabsButtonForce() {
           <Tab component={Link} label="My Account" to="/account" icon={<AccountCircleIcon />} {...a11yProps(6)} />
           <Tab component={Link} label="Example" to="/example" icon={<BookmarkIcon />} {...a11yProps(7)} />
 
+
         </Tabs>
       </AppBar>
     </div>
+
   );
 }
 
-// root: {
-//     flexGrow: 1,
-//     justifyContent: "center",
-//     width: '100%',
-//     backgroundColor: theme.palette.background.paper,
-//   },
-// }));
+
