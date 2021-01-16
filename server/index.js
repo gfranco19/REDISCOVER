@@ -21,18 +21,16 @@ app.use(cors());
 app.use('/posts', postRoutes)
 // connect server to real database (mongo) to host our database on their cloud not local //
 
-// before deployment store credentials //
+
 const CONNECTION_URL = 'mongodb+srv://Rediscover:Rediscover1234@cluster0.6ihq7.mongodb.net/<dbname>?retryWrites=true&w=majority'
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(CONNECTION_URL, {useNewUrlParser: true })
 .then(() => app.listen(PORT, () => console.log(`Server is Alive on port: ${PORT}`)))
 // if fails catch the error // 
-.catch((error) => console.log(error.message));
+.catch((error) => console.log(`${error} did not connect`));
 
 // avoid warnings in the console //
 
 mongoose.set('useFindAndModify', false );
-
-// to do merge with client side // 
