@@ -29,3 +29,14 @@ export const createPost = (post) => async (dispatch) => {
 }
 
 
+export const createUser = (post) => async (dispatch) => {
+    try {
+        const { data } = await api.createUser(post);
+
+        dispatch({ type: 'CREATE', payload: data});
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
