@@ -6,6 +6,7 @@ function Explore (){
         <div>
             
         <Uploads />
+       
 
         </div>
 

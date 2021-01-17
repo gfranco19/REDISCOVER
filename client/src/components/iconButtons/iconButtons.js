@@ -1,17 +1,13 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-
 import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
-
 const useStyles = makeStyles((theme) => ({
     button: {
         margin: theme.spacing(1),
-
-
     },
 }));
 
@@ -19,7 +15,6 @@ export default function IconLabelButtons() {
     const classes = useStyles();
     const clear = () => {
     }
-
 
     return (
         <div >
@@ -47,3 +42,6 @@ export default function IconLabelButtons() {
         </div>
     );
 }
+
+{/* <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+        <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Remove</Button> */}

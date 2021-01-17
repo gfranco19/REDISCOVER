@@ -22,3 +22,6 @@ h2 {
     /* background-color: none; */
   }
 
+  .rowShare {
+    justify-content: center;
+}
