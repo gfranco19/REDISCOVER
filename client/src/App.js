@@ -15,7 +15,6 @@ import Misc from "./pages/Misc/Misc";
 
 // import Uploads from "./Uploads";
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

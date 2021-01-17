@@ -28,7 +28,6 @@ const Uploads = (props) => {
         </div>
 
       <Container maxwidth="lg">
-        {/* <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography> */}
 
         <Grow in>
           <Container>

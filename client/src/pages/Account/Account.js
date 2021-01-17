@@ -9,7 +9,7 @@ function Account() {
             <NavTabs />
             <div className="palmsBackground">
                 <br /> <br />
-                <h1>@username's Account</h1>
+                <h1>My account</h1>
             </div>
         </div>
     );

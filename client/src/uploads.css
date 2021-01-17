@@ -8,20 +8,16 @@
     background-size: cover;
 }
 
-h2 {
-    font-size: 35px;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: 'Oswald', sans-serif;   
-    text-shadow: 1px 1px 4px #000000;
-    font-family: 'Oswald', sans-serif;   
-}
-
 .MuiButtonBase-root:focus {
     outline: none !important;
-    /* background-color: none; */
   }
 
-  .rowShare {
-    justify-content: center;
+@media screen and (max-width: 765px) {  
+  
+    .exploreBackground {
+        background: none;
 }
+}
+
+
+
