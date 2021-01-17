@@ -1,17 +1,21 @@
 // create handlers for all routes - extract logic from all the routes // 
+import express from 'express';
 import mongoose from "mongoose";
 import PostMessage from "../models/postMessage.js"
+
+
+const router = express.Router();
 
 export const getPosts = async (req, res) => {
     try {
         // async action 
-        const postMessages = await PostMessage.find();
+        const postMessages = await PostMessage.find()
 
-        console.log(postMessages);
+        //console.log(postMessages);
         // array of all messages 
-        res.status(200).json(postMessages)
+        return res.status(200).json( postMessages )
     } catch (error) {
-        res.ststus(404).json({ message: error.message }); 
+        return res.status(404).json({ message: error.message }); 
     }
 }
 
@@ -36,12 +40,21 @@ export const createPost = async (req, res) => {
 
 // update an existing post // 
 export const updatePost = async (req, res) => {
-    const { id: _id } = req.params;
-    const post = req.body;
 
-    if(!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No Post with that ID!');
+    console.log(req.body.message)
+    
+    let { tags, likeCount, title, message, selectedFile, creator } = req.body
 
-    const updatedPost = PostMessage.findByIdAndUpdate(_id, post, { new: true });
+    let filter = { _id : req.body._id } 
+    let update = { tags : tags, likeCount, likeCount, title : title, message : message, selectedFile : selectedFile, creator : creator } 
+
+    let updated = await PostMessage.findOneAndUpdate( filter , update)
    
-    res.json(updatedPost);
+   console.log(creator, tags, likeCount, title, message )
+   
+    res.json([updated]);
 }
+
+
+
+export default router;
