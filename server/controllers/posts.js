@@ -43,18 +43,43 @@ export const updatePost = async (req, res) => {
 
     console.log(req.body.message)
     
-    let { tags, likeCount, title, message, selectedFile, creator } = req.body
+    let { tags, likeCount, title, message, selectedFile, creator, post } = req.body
 
     let filter = { _id : req.body._id } 
-    let update = { tags : tags, likeCount, likeCount, title : title, message : message, selectedFile : selectedFile, creator : creator } 
+    let update = { tags : tags, likeCount, likeCount, title : title, message : message, selectedFile : selectedFile, creator : creator, post : post } 
 
-    let updated = await PostMessage.findOneAndUpdate( filter , update)
-   
+    // create a new object to spread and pass in the ID from the front end // 
+    let updated = await PostMessage.findOneAndUpdate( filter, update, post) 
+   // Trying to debug the update onclick...//
    console.log(creator, tags, likeCount, title, message )
    
     res.json([updated]);
 }
 
+    export const deletePost = async (req, res) => {
+        const { id } = req.params
 
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('Cannot find post with ID');
 
+        await PostMessage.findByIdAndRemove(id);
+
+        console.log('DELETE!')
+
+        return res.json({ message: "Post Deleted "});
+}
+
+export const likePost = async (req, res) => {
+    const { id } = req.params;
+
+    if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('Cannot find post with ID');
+
+    // this will return us a post
+    const post = await PostMessage.findById(id)
+    //this will return the updated posts with the like count which is fetched above. to increase the count by 1//
+    const updatedPost = await PostMessage.findByIdAndUpdate(id, { likeCount: post.likeCount + 1  }, { new: true });
+
+    console.log(likePost, post.likeCount);
+
+    res.json(updatedPost);
+}
 export default router;
