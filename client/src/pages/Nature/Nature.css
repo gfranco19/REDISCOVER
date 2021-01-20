@@ -1,0 +1,16 @@
+.natureBackground {
+    background: url("../../assets/images/nature.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+@media screen and (max-width: 765px) {  
+   
+    .natureBackground {
+    background: none;
+}
+}

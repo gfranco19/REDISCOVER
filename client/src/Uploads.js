@@ -1,52 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid } from "@material-ui/core"
+import Posts from "./components/Posts/Posts";
 import { useDispatch } from 'react-redux';
 import './uploads.css';
 import { getPosts } from './actions/posts';
-import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
 import useStyles from './styles';
-import NavTabs from "./components/NavTabs/NavTabs";
 
-
-const Uploads = (props) => {
+const Uploads = () => {
+  const [currentId, setCurrentId] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch])
+  }, [currentId, dispatch])
 
   return (
-    <div className="exploreBackground">
 
-      <NavTabs />
-      <div className="center">
-        <br /><br /><br />
-        <h2>Share your experiences with your fellow explorers!</h2>
-        <Form />
-        </div>
-
-      <Container maxwidth="lg">
-
-        <Grow in>
-          <Container>
-            <Grid container justify="space-between" alignItems="stretch" spacing="3" >
-              <Grid item xs={12} sm={7}>
-                <Posts />
-              </Grid>
-              {/* <Grid item xs={12} sm={4}>
-              <br/>  */}
-              {/* <Form /> */}
-              {/* </Grid> */}
+    <Container maxwidth="lg">
+      <Grow in>
+        <Container>
+          <Grid container justify="space-between" alignItems="stretch" spacing="3" >
+            <Grid item xs={12} sm={6}>
+              <Posts setCurrentId={setCurrentId} />
             </Grid>
-          </Container>
-        </Grow>
-      </Container>
-    </div>
-
+            <Grid item xs={12} sm={4}>
+              <Form currentId={currentId} setCurrentId={setCurrentId} />
+            </Grid>
+          </Grid>
+        </Container>
+      </Grow>
+    </Container>
   )
 }
-
 
 export default Uploads;

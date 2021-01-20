@@ -32,6 +32,14 @@ h5 {
     font-family: 'Oswald', sans-serif;  
 }
 
+.MuiGrid-root.MuiContainer-root {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+.MuiContainer-root.MuiContainer-maxWidthLg {
+    max-width: none;
+}
+
 @media screen and (max-width: 765px) {
     
 .palmsBackground {
@@ -45,13 +53,11 @@ h1 {
     font-family: 'Oswald', sans-serif;   
 }
 
-
 h2 {
-    font-size: 25px;
+    font-size: 29px;
     text-align: center;
     font-family: 'Oswald', sans-serif;   
     font-family: 'Oswald', sans-serif;   
 }
 
 }
-

@@ -9,9 +9,12 @@ import Haunted from "./pages/Haunted/Haunted";
 import Historical from "./pages/Historical/Historical";
 import Film from "./pages/Film/Film";
 import Example from "./pages/Example/Example";
-import Explore from "./pages/ExplorePage/Explore";
 import Account from "./pages/Account/Account";
 import Misc from "./pages/Misc/Misc";
+import Nature from "./pages/Nature/Nature";
+// import Share from "./pages/Share/Share";
+// import Explore from "./pages/Explore/Explore";
+import Explore from "./pages/ExplorePage/Explore"
 
 // import Uploads from "./Uploads";
 
@@ -26,13 +29,16 @@ function App() {
           <Route exact path="/" component={Index} />
           <Route path="/Register" component={Register} />
           <Route path="/Login" component={Login} />
-          <Route path="/explorer" component={Explore} />
+          {/* <Route path="/share" component={Share} /> */}
           <Route path="/haunted" component={Haunted} />
           <Route path="/historical" component={Historical} />
           <Route path="/film" component={Film} />
           <Route path="/misc" component={Misc} />
           <Route path="/account" component={Account} />
-          <Route path="/Example" component={Example} />
+          <Route path="/nature" component={Nature} />
+          <Route path="/explorer" component={Explore} />
+
+          {/* <Route path="/Example" component={Example} /> */}
       
         <Footer />
       </Router>
