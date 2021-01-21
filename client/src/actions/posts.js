@@ -1,5 +1,5 @@
 
-import * as api from '../api';
+import * as api from '../api/index';
 
 // action creaters are function that return actions //
 // redux thunk allows specification of an additional arrow function //

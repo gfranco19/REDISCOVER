@@ -8,11 +8,10 @@
     background-size: cover;
 }
 
-h1 {
-    font-size: 55px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: 'Oswald', sans-serif;   
+@media screen and (max-width: 765px) {  
+   
+    .historyBackground {
+    background: none;
+}
 }
 
