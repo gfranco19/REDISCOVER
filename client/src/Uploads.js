@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux';
 import './uploads.css';
 import { getPosts } from './actions/posts';
 import Form from "./components/Form/Form";
-import useStyles from './styles';
+
 
 const Uploads = () => {
   const [currentId, setCurrentId] = useState(null);
-  const classes = useStyles();
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
