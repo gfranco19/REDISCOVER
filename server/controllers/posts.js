@@ -36,6 +36,82 @@ export const createPost = async (req, res) => {
     }
 }
 
+//to find certain tags
+export const getHaunted = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Haunted Place"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
+export const getFilm = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Film Location"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
+export const getHistorical = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Historical Site"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
+export const getNature = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Out in Nature"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
+export const getMisc = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Other Fun Places"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
 
 
 // update an existing post // 

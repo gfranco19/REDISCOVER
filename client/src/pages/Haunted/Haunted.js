@@ -1,6 +1,7 @@
 import React from "react";
 import "./Haunted.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
+import RenderHaunted from "./RenderHaunted";
 
 function Haunted() {
     return (
@@ -9,6 +10,9 @@ function Haunted() {
             <div className="hauntedBackground">
                 <br /> <br />
                 <h1>Haunted Places</h1>
+                <div className="center">
+                </div>
+                <RenderHaunted />
                 
             </div>
         </div>

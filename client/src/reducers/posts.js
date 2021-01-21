@@ -6,14 +6,19 @@ export default (posts = [], action) => {
         case 'DELETE':
               return posts.filter((post) => post._id !== action.payload)
             // action.payload will be the updated post otherwise just return the post without updates //
-        case 'UPDATE':
+
+          case 'UPDATE':
            // both update and like cases can do the same thing if not they will return the original post //  
-        case 'LIKE':
-              return posts.map((post) => post._id === action.payload._id ? action.payload : post);
-        case 'FETCH_ALL':
+          case 'LIKE':
+            return posts.map((post) => post._id === action.payload._id ? action.payload : post);
+          case 'FETCH_ALL':
+           return action.payload;
+          case 'CREATE':
+            return [...posts, action.payload];
+            case 'FETCH':
               return action.payload;
-        case 'CREATE':
-              return [...posts, action.payload];
+
+
        default:
            return posts;
    }

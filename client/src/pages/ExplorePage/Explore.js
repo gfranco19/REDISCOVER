@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Explore.css";
 import { useDispatch } from 'react-redux';
 import NavTabs from "../../components/NavTabs/NavTabs";
-import Posts from "../../components/Posts/Posts";
+import PublicPosts from "../../components/Posts/PublicPosts";
 import useStyles from '../../styles';
 import { getPosts } from '../../actions/posts';
 // import Form from "./components/Form/Form";
@@ -24,6 +24,8 @@ function Explore (){
         <div className="nightBackground">
                 <br /><br /> <br />
                 <h1>Explore!</h1>
+                <div className="center">
+                </div>
                 <br />
                 
             </div>
@@ -36,7 +38,7 @@ function Explore (){
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing="3" >
               <Grid item xs={12} sm={7}>
-                <Posts setCurrentId={setCurrentId} />
+                <PublicPosts setCurrentId={setCurrentId} />
               </Grid>
               <Grid item xs={12} sm={4}>
                 </Grid>
