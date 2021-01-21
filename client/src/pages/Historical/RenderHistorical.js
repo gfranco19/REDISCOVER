@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PublicPosts from "../../components/Posts/PublicPosts.js";
 import { useDispatch } from 'react-redux';
-import { getHaunted } from '../../actions/posts';
+import { getHistorical } from '../../actions/posts';
 import { Container, Typography, Grow, Grid } from "@material-ui/core"
 import useStyles from '../../styles';
 
@@ -11,7 +11,7 @@ const RenderHaunted = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getHaunted());
+    dispatch(getHistorical());
   }, [dispatch])
 
   return (

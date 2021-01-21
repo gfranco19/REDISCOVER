@@ -41,7 +41,7 @@ export const getHaunted = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Haunted"
+            tags: "Haunted Place"
         });
 
         //console.log(postMessages);
@@ -56,7 +56,7 @@ export const getFilm = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Film"
+            tags: "Film Location"
         });
 
         //console.log(postMessages);
@@ -71,7 +71,7 @@ export const getHistorical = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Historical"
+            tags: "Historical Site"
         });
 
         //console.log(postMessages);
@@ -86,7 +86,7 @@ export const getNature = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Nature"
+            tags: "Out in Nature"
         });
 
         //console.log(postMessages);
@@ -101,7 +101,7 @@ export const getMisc = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Misc"
+            tags: "Other Fun Places"
         });
 
         //console.log(postMessages);

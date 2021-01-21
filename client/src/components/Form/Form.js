@@ -65,8 +65,8 @@ const Form = ({ currentId, setCurrentId }) => {
             label: 'Out in Nature',
         },
         {
-            value: 'Other Fun Place',
-            label: 'Other Fun Place',
+            value: 'Other Fun Places',
+            label: 'Other Fun Places',
         },
     ];
 

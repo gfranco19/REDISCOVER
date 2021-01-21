@@ -18,7 +18,7 @@ router.patch('/:id/likePost', likePost);
 router.get('/haunted', getHaunted );
 router.get('/film', getFilm );
 router.get('/historical', getHistorical );
-router.get('/natue', getNature );
+router.get('/nature', getNature );
 router.get('/misc', getMisc );
 
 
