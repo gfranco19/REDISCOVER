@@ -11,8 +11,8 @@ const Posts = () => {
 
     // mobile devices comp for Grids // 
     return (
-        // !posts.length ? 
-        // <CircularProgress /> : (
+        !posts.length ? 
+        <CircularProgress /> : (
             
             <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                 {posts.map((post) => (
@@ -22,7 +22,7 @@ const Posts = () => {
                     ))}
             </Grid>
         // )
-    );
+    ));
 }
 
 export default Posts;
