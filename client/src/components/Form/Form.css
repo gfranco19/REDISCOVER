@@ -1,4 +1,4 @@
-p, input {
+/* p, input {
     color: black!important
 }
 
@@ -15,7 +15,56 @@ p, input {
 body {
     background-color: white;
 }
-} 
+}  */
+
+
+
+/* p, input {
+    color: black!important
+} */
+
+.formContainer {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* width: 60%; */ 
+}
+
+.binocularsTwo {
+    max-width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+}
+
+.MuiSelect-selectMenu {
+    align-content: left;
+}
+
+.makeStyles-paper-139 {
+    padding: 0px!important;
+}
+
+@media screen and (max-width: 1100px) {
+
+/* body {
+    background-color: white;
+} */
+
+.formContainer {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;     
+}
+
+
+}
 
 
 
