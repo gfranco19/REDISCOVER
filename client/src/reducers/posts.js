@@ -2,14 +2,11 @@
 
 export default (posts = [], action) => {
    switch (action.type) {
-       case 'FETCH_ALL':
-         break
             // return all posts but filter out the deleted post then dispatch the action in components// 
           case 'DELETE':
             return posts.filter((post) => post._id !== action.payload)
             // action.payload will be the updated post otherwise just return the post without updates //
           case 'UPDATE':
-            break
            // both update and like cases can do the same thing if not they will return the original post //  
           case 'LIKE':
             return posts.map((post) => post._id === action.payload._id ? action.payload : post);
@@ -17,6 +14,8 @@ export default (posts = [], action) => {
            return action.payload;
           case 'CREATE':
             return [...posts, action.payload];
+            case 'FETCH':
+              return action.payload;
        default:
            return posts;
    }

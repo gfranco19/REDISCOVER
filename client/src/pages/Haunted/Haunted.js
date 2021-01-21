@@ -2,6 +2,7 @@ import React from "react";
 import "./Haunted.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import ButtonGroupPages from "../../components/Buttons/ButtonGroup"
+import RenderHaunted from "./RenderHaunted";
 
 function Haunted() {
     return (
@@ -13,6 +14,7 @@ function Haunted() {
                 <div className="center">
                     <ButtonGroupPages />
                 </div>
+                <RenderHaunted />
             </div>
         </div>
     );

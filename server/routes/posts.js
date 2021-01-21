@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getPosts, createPost, updatePost, deletePost, likePost } from '../controllers/posts.js'
+import { getPosts, createPost, updatePost, deletePost, likePost, getHaunted, getFilm, getHistorical, getNature, getMisc} from '../controllers/posts.js'
 
 
 const router = express.Router();
@@ -14,6 +14,12 @@ router.patch('/:id', updatePost);
 router.delete('/:id', deletePost);
 // similar to the update post in liking the post so I used patch // 
 router.patch('/:id/likePost', likePost);
+//getfiltered data
+router.get('/haunted', getHaunted );
+router.get('/film', getFilm );
+router.get('/historical', getHistorical );
+router.get('/natue', getNature );
+router.get('/misc', getMisc );
 
 
 

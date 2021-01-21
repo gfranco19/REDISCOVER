@@ -60,3 +60,13 @@ export const likePost = (id) => async (dispatch) => {
         console.log(error)
     }
 }
+//get haunted
+export const getHaunted = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchHaunted();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
