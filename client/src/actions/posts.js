@@ -58,7 +58,7 @@ export const likePost = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
-<<<<<<< HEAD
+
 }
 //get haunted
 export const getHaunted = () => async (dispatch) => {
@@ -70,6 +70,4 @@ export const getHaunted = () => async (dispatch) => {
         console.log(error.message)
     }
 };
-=======
-}
->>>>>>> f940eda20b3a050607576b28197a695363044b8a
+
