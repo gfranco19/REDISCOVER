@@ -9,9 +9,7 @@ import {useDispatch} from 'react-redux'
 import { deletePost, likePost } from '../../../actions/posts';
 
 
-
-
-const Post = ({post, setCurrentId}) => {
+const Post = ({post}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     return(
@@ -21,8 +19,8 @@ const Post = ({post, setCurrentId}) => {
                 <Typography variant="h6"> {post.creator}</Typography>
                 <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
             </div>
-            <div className={classes.overlay2} > 
-                <Button style={{color: 'white'}} size="small" onClick={() => setCurrentId(post._id)}>
+            <div className={classes.overlay2} >
+                <Button style={{color: 'green'}} size="small" onClick={() => {}}>
                     <MoreHorizIcon fontSize='default' />
                 </Button>
             </div>
@@ -31,9 +29,8 @@ const Post = ({post, setCurrentId}) => {
             </div>
             <Typography className={classes.title} color="textSecondary" gutterBottom variant="h5" >{post.title}</Typography>
             <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p" >{post.message}</Typography>
+            <Typography className={classes.title} variant="h5" gutterBottom>{post.message}</Typography>
             </CardContent>
-
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))} >
                     <ThumbUpAltIcon fontSize="small" />

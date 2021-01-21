@@ -2,6 +2,7 @@
 
 export default (posts = [], action) => {
    switch (action.type) {
+       case 'FETCH_ALL':
             // return all posts but filter out the deleted post then dispatch the action in components// 
           case 'DELETE':
             return posts.filter((post) => post._id !== action.payload)

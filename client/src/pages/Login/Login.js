@@ -40,8 +40,6 @@ function Login() {
 
                 </Card>
             </div>
-
     );
 }
-
 export default Login;

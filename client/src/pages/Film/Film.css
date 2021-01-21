@@ -8,13 +8,13 @@
     background-size: cover;
 }
 
-h1 {
-    font-size: 55px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: 'Oswald', sans-serif;   
-    text-shadow: 1px 1px 6px #000000;}
+@media screen and (max-width: 765px) {
 
+    .filmBackground {
+    background: none;      
+} 
+}
+    
+    
 
 
