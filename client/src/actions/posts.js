@@ -1,5 +1,4 @@
-
-import * as api from '../api/index';
+import * as api from '../api';
 
 // action creaters are function that return actions //
 // redux thunk allows specification of an additional arrow function //
@@ -59,6 +58,7 @@ export const likePost = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
+<<<<<<< HEAD
 }
 //get haunted
 export const getHaunted = () => async (dispatch) => {
@@ -70,3 +70,6 @@ export const getHaunted = () => async (dispatch) => {
         console.log(error.message)
     }
 };
+=======
+}
+>>>>>>> f940eda20b3a050607576b28197a695363044b8a
