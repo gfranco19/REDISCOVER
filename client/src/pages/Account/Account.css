@@ -40,6 +40,16 @@ h5 {
     max-width: none;
 }
 
+.MuiPaper-root.MuiCard-root.makeStyles-card-26.MuiPaper-elevation1.MuiPaper-rounded {
+    color: black;
+    background-color: white;
+}
+
+.makeStyles-root-13 {
+    background-color: none;
+}
+
+
 @media screen and (max-width: 765px) {
     
 .palmsBackground {
