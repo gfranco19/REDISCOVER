@@ -1,30 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
 // dispatch action from post.js //
-import { useDispatch } from 'react-redux';
-import IconLabelButtons from '../iconButtons/iconButtons'
+
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
+// import IconLabelButtons from '../iconButtons/iconButtons'
+
 import useStyles from './styles';
-import { createPost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
 
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    
+    // To find the posts will the same ID to be updated with currentID to find a specific post. //
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
+    // styling classes from the JS files.
     const classes = useStyles();
     // allows dispatch actions // 
     const dispatch = useDispatch();
 
+    // populates the values of the form with a callback and a dependency array // 
+   useEffect(() => {
+       if(post) {
+           console.log(post)
+           setPostData(post);
+       }  
+   }, [post])
+
     // when user hit submit it will send a post request with the data they added // 
     const handleSubmit = (e) => {
+        
         e.preventDefault();
 
-        dispatch(createPost(postData));
-
+        if(currentId) {
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        // regardless of if or else we will clear the form and call the clear function at the end //     
+        }
+        clear();
     }
-
+// This function will clear form after submit is click upon editing a post // 
     const clear = () => {
-
+        setCurrentId(null);
+        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
     }
 
     return(

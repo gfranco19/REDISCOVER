@@ -24,18 +24,19 @@ class Login extends Component {
     event.preventDefault();
 
     // login here
-    axios.post("/api/login", this.state).then(res=> console.log(res))
+    axios.post("/api/login", this.state).then((res) => console.log(res));
   };
 
   render() {
     return (
-      <div         style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-       }}>
- 
-      <div/>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <div />
         <Card style={{ width: "28rem" }}>
           <Card.Body>
             <Form>
