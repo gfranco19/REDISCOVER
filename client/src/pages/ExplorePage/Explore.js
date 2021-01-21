@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Explore.css";
-import ButtonGroupPages from "../../components/Buttons/ButtonGroup"
 import { useDispatch } from 'react-redux';
 import NavTabs from "../../components/NavTabs/NavTabs";
 import Posts from "../../components/Posts/Posts";
@@ -26,9 +25,7 @@ function Explore (){
                 <br /><br /> <br />
                 <h1>Explore!</h1>
                 <br />
-                <div className="center">
-                    <ButtonGroupPages />
-                </div>
+                
             </div>
       
         <Container maxwidth="lg">
