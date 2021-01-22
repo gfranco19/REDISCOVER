@@ -12,11 +12,10 @@ const useStyles = makeStyles(theme => ({
   root: {
     "& .MuiPaper-root": {
       borderRadius: "100px",
-      // backgroundColor: "transparent"
+      backgroundColor: "#f5f5f5"
     }
   }
 }));
-
 
 function DarkMode() {
   const [theme, setTheme] = useState(true);
@@ -41,14 +40,15 @@ function DarkMode() {
 export const light = {
   palette: {
     type: "light",
-    background: { default: "#ffffff" }    
+    background: { default: "#ffffff" },
 
   }
 };
 export const dark = {
   palette: {
     type: "dark",
-    background: { default: "#000000" }    
+    background: { default: "#000000" },  
+  
     },
     
   }

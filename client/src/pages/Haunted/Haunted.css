@@ -1,11 +1,13 @@
 .hauntedBackground {
-    background: url("../../assets/images/spooky1.png");
-    background-repeat: no-repeat;
+
+    background: url("../../assets/images/spooky1.png") fixed;
     position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
     top: 1;
     width: 100%;
-    height: 100%;
-    background-size: cover;
+    height: 100vh;
+    margin: 0;
 }
 
 @media screen and (max-width: 765px) {   

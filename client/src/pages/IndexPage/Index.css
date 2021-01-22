@@ -1,6 +1,5 @@
 .welcomeBackground {
-  background: url("../../assets/images/welcome3.png");
-  background-repeat: no-repeat;
+  background: url("../../assets/images/welcome3.png") no-repeat center center fixed;
   position: absolute;
   top: 1;
   width: 100%;
