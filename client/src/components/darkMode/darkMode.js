@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     "& .MuiPaper-root": {
       borderRadius: "100px",
-      backgroundColor: "#f5f5f5"
+  
     }
   }
 }));
@@ -47,7 +47,7 @@ export const light = {
 export const dark = {
   palette: {
     type: "dark",
-    background: { default: "#000000" },  
+    background: { default: "#424242" },  
   
     },
     
