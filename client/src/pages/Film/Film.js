@@ -7,7 +7,7 @@ function Film() {
         <div>
             <NavTabs />
             <div className="filmBackground">
-                <br /> <br />
+                <br /> <br /><br />
                 <h1>Film Locations</h1>
                 <div className="center">
                 </div>

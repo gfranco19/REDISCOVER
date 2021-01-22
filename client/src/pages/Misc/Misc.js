@@ -7,7 +7,7 @@ function Misc() {
         <div>
             <NavTabs />
             <div className="redlandsBackground">
-                <br /> <br />
+                <br /> <br /><br />
                 <h1>More Fun Places</h1>
                 <div className="center">
                 </div>

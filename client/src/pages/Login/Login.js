@@ -20,12 +20,12 @@ function Login() {
                             <p className="signin">Login to Rediscover</p>
 
                             <Form.Group controlId="formBasicEmail">
-                                <Form.Label>Email address</Form.Label>
+                                <Form.Label className="insideText">Email address</Form.Label>
                                 <Form.Control type="email" />
                             </Form.Group>
 
                             <Form.Group controlId="formBasicPassword">
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label className="insideText">Password</Form.Label>
                                 <Form.Control type="password" />
                             </Form.Group>
 

@@ -24,12 +24,12 @@ function Register() {
                         <p className="signin">Create your account</p>
 
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Label name="email" variant="outlined" label="Email" >Email address</Form.Label>
+                            <Form.Label name="email" variant="outlined" className="insideText" label="Email" >Email address</Form.Label>
                             <Form.Control type="email" />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword">
-                            <Form.Label name="password" variant="outlined" label="Password">Password</Form.Label>
+                            <Form.Label name="password" className="insideText" variant="outlined" label="Password">Password</Form.Label>
                             <Form.Control type="password" />
                         </Form.Group>
 
