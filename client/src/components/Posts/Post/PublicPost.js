@@ -34,6 +34,8 @@ const PublicPost = ({post}) => {
                     Like   {post.likeCount} 
                    
                 </Button>
+                <form action={'https://www.google.com/maps/dir/Current+Location/' + post.location} target="_blank">
+        <button type="submit" >Click me</button></form>
             </CardActions>
         </Card>
     );
