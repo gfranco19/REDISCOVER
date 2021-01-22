@@ -1,11 +1,17 @@
 # Rediscover App  
+Rediscover is a mobile application that allows you to discover the most wonderful of places. In this app, you will be allowed to post pictures and location of places you
+visited in. 
+
 
 ## Description  
 
 ## Live Link  
 [Rediscover](https://github.com/gfranco19/finalProject)  
 
-## Demo  
+## Demo/ Screenshots
+
+
+
 
 ## Credits  
 *server side:*  

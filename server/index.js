@@ -5,7 +5,6 @@ import cors from "cors";
 
 //our globals//
 import postRoutes from "./routes/posts.js";
-import apiRoutes from "./routes/api-routes.js";
 
 // initialize the app //
 const app = express(); 

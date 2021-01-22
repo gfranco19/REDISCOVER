@@ -1,5 +1,10 @@
-p, input {
-    color: black!important
+.formContainer {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /* width: 60%; */ 
 }
 
 .binocularsTwo {
@@ -10,12 +15,31 @@ p, input {
     margin-top: 70px;
 }
 
-@media screen and (max-width: 765px) {
-
-body {
-    background-color: white;
+.MuiSelect-selectMenu {
+    align-content: left;
 }
-} 
+
+.makeStyles-paper-139 {
+    padding: 0px!important;
+}
+
+@media screen and (max-width: 1100px) {
+
+/* body {
+    background-color: white;
+} */
+
+.formContainer {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;     
+}
+
+
+}
 
 
 

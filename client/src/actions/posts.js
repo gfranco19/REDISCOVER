@@ -1,5 +1,4 @@
-
-import * as api from '../api/index';
+import * as api from '../api';
 
 // action creaters are function that return actions //
 // redux thunk allows specification of an additional arrow function //
@@ -59,4 +58,63 @@ export const likePost = (id) => async (dispatch) => {
     } catch (error) {
         console.log(error)
     }
+
 }
+//get haunted
+export const getHaunted = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchHaunted();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
+//get historical
+
+export const getHistorical = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchHistorical();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
+//get film
+
+export const getFilm = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchFilm();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
+//get nature
+
+export const getNature = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchNature();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
+//get misc
+
+export const getMisc = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchMisc();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};

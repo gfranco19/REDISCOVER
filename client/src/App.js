@@ -16,24 +16,27 @@ import Explore from "./pages/ExplorePage/Explore"
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DarkMode from './components/darkMode/darkMode';
 
 function App() {
 
   return (
     <div>
       <Router>
-          
-          <Route exact path="/" component={Index} />
-          <Route path="/Register" component={Register} />
-          <Route path="/Login" component={Login} />
-          <Route path="/haunted" component={Haunted} />
-          <Route path="/historical" component={Historical} />
-          <Route path="/film" component={Film} />
-          <Route path="/misc" component={Misc} />
-          <Route path="/account" component={Account} />
-          <Route path="/nature" component={Nature} />
-          <Route path="/explorer" component={Explore} />
-        <Footer />
+        <Route exact path="/" component={Index} />
+        <Route path="/Register" component={Register} />
+        <Route path="/Login" component={Login} />
+        <Route path="/haunted" component={Haunted} />
+        <Route path="/historical" component={Historical} />
+        <Route path="/film" component={Film} />
+        <Route path="/misc" component={Misc} />
+        <Route path="/account" component={Account} />
+        <Route path="/nature" component={Nature} />
+        <Route path="/explorer" component={Explore} />
+
+        <DarkMode />
+        
+        {/* <Footer /> */}
       </Router>
     </div>
   )
