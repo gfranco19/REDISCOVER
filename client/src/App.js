@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer"
+// import Footer from "./components/Footer/Footer"
 import Index from "./pages/IndexPage/Index";
 import Register from "./pages/Register/Register";
 import Login from "./pages/Login/Login";
@@ -12,6 +12,7 @@ import Account from "./pages/Account/Account";
 import Misc from "./pages/Misc/Misc";
 import Nature from "./pages/Nature/Nature";
 import Explore from "./pages/ExplorePage/Explore"
+import Auth from "./components/Auth/Auth";
 
 
 
@@ -24,6 +25,7 @@ function App() {
     <div>
       <Router>
         <Route exact path="/" component={Index} />
+        <Route exact path="/auth" component={Auth} />
         <Route path="/Register" component={Register} />
         <Route path="/Login" component={Login} />
         <Route path="/haunted" component={Haunted} />

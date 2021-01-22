@@ -12,7 +12,7 @@ function Account() {
                 <br /> <br /> <br />
                     
                     <h1>My account</h1>
-                    <Uploads />               
+                    <Uploads />           
             </div>
         </div>
     );
