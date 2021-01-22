@@ -7,7 +7,7 @@ function Nature() {
         <div>
             <NavTabs />
             <div className="natureBackground">
-                <br /> <br />
+                <br /> <br /><br />
                 <h1>Out in Nature</h1>
                 <div className="center">
                 </div>

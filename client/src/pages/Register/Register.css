@@ -6,6 +6,10 @@
     font-family: 'Oswald', sans-serif;   
 }
 
+.insideText {
+    color: rgb(69, 69, 69);
+}
+
 .redirectRegister {
     font-size: 13px;
     font-weight: 500;

@@ -8,7 +8,7 @@ function Haunted() {
         <div>
             <NavTabs />
             <div className="hauntedBackground">
-                <br /> <br />
+                <br /> <br /><br />
                 <h1>Haunted Places</h1>
                 <div className="center">
                 </div>

@@ -23,18 +23,19 @@ function App() {
   return (
     <div>
       <Router>
-      <DarkMode />
-          <Route exact path="/" component={Index} />
-          <Route path="/Register" component={Register} />
-          <Route path="/Login" component={Login} />
-          <Route path="/haunted" component={Haunted} />
-          <Route path="/historical" component={Historical} />
-          <Route path="/film" component={Film} />
-          <Route path="/misc" component={Misc} />
-          <Route path="/account" component={Account} />
-          <Route path="/nature" component={Nature} />
-          <Route path="/explorer" component={Explore} />
-         
+        <Route exact path="/" component={Index} />
+        <Route path="/Register" component={Register} />
+        <Route path="/Login" component={Login} />
+        <Route path="/haunted" component={Haunted} />
+        <Route path="/historical" component={Historical} />
+        <Route path="/film" component={Film} />
+        <Route path="/misc" component={Misc} />
+        <Route path="/account" component={Account} />
+        <Route path="/nature" component={Nature} />
+        <Route path="/explorer" component={Explore} />
+
+        <DarkMode />
+        
         {/* <Footer /> */}
       </Router>
     </div>
