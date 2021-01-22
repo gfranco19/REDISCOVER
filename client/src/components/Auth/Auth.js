@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container } from "@material-ui/core"
+import { GoogleLogin } from "react-google-login";
+import Icon from "./icon"
 import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from './Input';
@@ -28,8 +30,16 @@ const Auth = () => {
     const switchMode = () => {
         setIsSignup((previsSignUp) => !previsSignUp);
         handleShowPassword(false);
-    }
+    };
+    // gain access to a full response // 
+   const googleSuccess = (res) => {
 
+   };
+
+   const googleFailure = () => {
+        console.log("Google Sign in was unsuccessful.")
+   };
+ 
 
     return (
        <Container component="main" maxwidth="xs">
@@ -51,6 +61,25 @@ const Auth = () => {
                             <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
                             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
                             </Grid>
+                            <GoogleLogin 
+                                clientId="GOOGLE ID"
+                                render={(renderProps) =>(
+                                    <Button 
+                                    className={classes.googleButton} 
+                                    color="primary" 
+                                    fullWidth 
+                                    onClick={renderProps.onClick} 
+                                    disabled={renderProps.disabled} 
+                                    startIcon={<Icon />} 
+                                    variant="contained">
+                                        Sign up with Google
+                                    </Button>
+                                )}
+                                onSuccess={googleSuccess}
+                                onFailure={googleFailure}
+                                cookiePolicy="single_host_origin"
+
+                            />
                             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                                 { isSignup ? 'Sign up for Rediscover' : 'Login to Rediscover' }
                             </Button>
