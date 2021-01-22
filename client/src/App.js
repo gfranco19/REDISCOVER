@@ -16,13 +16,14 @@ import Explore from "./pages/ExplorePage/Explore"
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import DarkMode from './components/darkMode/darkMode';
 
 function App() {
 
   return (
     <div>
       <Router>
-          
+      <DarkMode />
           <Route exact path="/" component={Index} />
           <Route path="/Register" component={Register} />
           <Route path="/Login" component={Login} />
@@ -33,7 +34,8 @@ function App() {
           <Route path="/account" component={Account} />
           <Route path="/nature" component={Nature} />
           <Route path="/explorer" component={Explore} />
-        <Footer />
+         
+        {/* <Footer /> */}
       </Router>
     </div>
   )

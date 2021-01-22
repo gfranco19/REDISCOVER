@@ -1,11 +1,19 @@
 .nightBackground {
-    background: url("../../assets/images/night.png");
-    background-repeat: no-repeat;
-    position: absolute;
+    background: url("../../assets/images/night2.png");
+    /* background-attachment: fixed; */
+    /* position: center;
     top: 1;
     width: 100%;
     height: 100%;
+    background-size: cover; */
+
+    position: fixed;
+    /* background-repeat: no-repeat; */
     background-size: cover;
+    top: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 @media screen and (max-width: 765px) {  

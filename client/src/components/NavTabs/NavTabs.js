@@ -69,8 +69,8 @@ export default function ScrollableTabsButtonForce() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
-        <Tabs
+      <AppBar position="static" color="default"  elevation="0">
+        <Tabs    
           value={value}
           classes={{ root: classes.root, scroller: classes.scroller }}
           onChange={handleChange}
@@ -81,7 +81,7 @@ export default function ScrollableTabsButtonForce() {
           aria-label="scrollable force tabs example"
         >
           <Tab component={Link} label="Home" to ="/account" icon={<HomeIcon />} {...a11yProps(0)} />
-          <Tab component={Link} label="Share" to="/explorer" icon={<ExploreIcon />} {...a11yProps(1)} />
+          <Tab component={Link} label="Explore" to="/explorer" icon={<ExploreIcon />} {...a11yProps(1)} />
           <Tab component={Link} label="Haunted"  to="/haunted" icon={<ErrorIcon />} {...a11yProps(2)} />
           <Tab component={Link} label="Historical" to="/historical" icon={<MenuBookIcon />} {...a11yProps(3)} />
           <Tab component={Link} label="Film" to="/film" icon={<GroupWorkIcon />} {...a11yProps(4)} />

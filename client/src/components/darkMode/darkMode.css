@@ -1,17 +1,15 @@
 .MuiIconButton-root:focus {
-    outline: none !important;
-    background-color: none;
-    /* box-shadow: transparent; */
-  }
+  outline: none !important;
+  background-color: none;
+  /* box-shadow: transparent; */
+}
 
 .MuiPaper-root {
-  background-color: none!important;
+background-color: #f5f5f5;
 }
-     
-  .MuiIconButton-edgeEnd {
-      margin-right: 0px!important;
-  }
-
-
+   
+.MuiIconButton-edgeEnd {
+    margin-right: 0px!important;
+}
 
 

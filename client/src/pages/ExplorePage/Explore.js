@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Explore.css";
 import { useDispatch } from 'react-redux';
 import NavTabs from "../../components/NavTabs/NavTabs";
+// import Posts from "../../components/Posts/Posts";
 import PublicPosts from "../../components/Posts/PublicPosts";
 import useStyles from '../../styles';
 import { getPosts } from '../../actions/posts';
