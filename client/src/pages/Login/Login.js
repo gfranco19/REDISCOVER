@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 function Login() {
 
     return (
-
+       
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }} >
                 <Card className="registerCard" style={{ width: '28rem' }} >
-                   
+
                     <Card.Body>
                         <Form>
                             <Card.Img variant="top" src={Binoculars} className="binoculars" alt="binoculars" />
@@ -40,6 +40,7 @@ function Login() {
 
                 </Card>
             </div>
+           
     );
 }
 export default Login;
