@@ -11,7 +11,6 @@ library.add(
   faTags,
 );
 
-
 export const houseDamage = icon({ prefix: 'fas', iconName: 'houseDamage' }).html;
 export const compass = icon({ prefix: 'fas', iconName: 'compass' }).html;
 export const houseUser = icon({ prefix: 'fas', iconName: 'houseUser' }).html;

@@ -3,7 +3,8 @@ import "./Haunted.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderHaunted from "./RenderHaunted";
 
-function Haunted() {
+function Haunted(props) {
+
     return (
         <div>
             <NavTabs />
