@@ -3,50 +3,67 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles({
   media: {
     height: 0,
-    paddingTop: '56.25%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    backgroundBlendMode: 'darken',
+    paddingTop: '75%',
+    backgroundColor: '#000000',
   },
-  border: {
-    border: 'solid',
-  },
+
   fullHeightCard: {
     height: '100%',
   },
   card: {
     display: 'flex',
+    border: 'solid 1px',
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+    elevation: '3',
+    
   },
   overlay: {
     position: 'absolute',
     top: '20px',
     left: '20px',
     color: 'white',
+    
   },
   overlay2: {
     position: 'absolute',
     top: '20px',
     right: '20px',
     color: 'white',
+    
+
   },
   grid: {
     display: 'flex',
+    
   },
+
+  // content: {
+  //   padding: '7px',
+  // },
+
   details: {
     display: 'flex',
     justifyContent: 'space-between',
-    margin: '20px',
+    margin: '4px',
+    color: '#000000',
+
   },
   title: {
-    padding: '0 16px',
-  },
+    padding: '4px',
+    color: '#000000',
+    fontSize: '18px'
+    },
+
   cardActions: {
-    padding: '0 16px 8px 16px',
+    padding: '0 6px 6px 6px',
     display: 'flex',
     justifyContent: 'space-between',
+    
   },
+  
+
 });

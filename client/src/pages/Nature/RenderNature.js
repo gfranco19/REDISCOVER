@@ -26,8 +26,8 @@ const RenderNature = () => {
               <Grid item xs={12} sm={10} md={9} lg={9}>
                 <PublicPosts setCurrentId={setCurrentId} />
               </Grid>
-              <Grid item xs={12} sm={4}>
-              </Grid>
+              {/* <Grid item xs={12} sm={4}>
+              </Grid> */}
             </Grid>
           </Container>
         </Grow>
