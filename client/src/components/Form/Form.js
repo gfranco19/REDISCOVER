@@ -11,8 +11,8 @@ import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', location:'', selectedFile: '' });
-    
+    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', location: '', selectedFile: '', user: '' });
+
     // To find the posts will the same ID to be updated with currentID to find a specific post. //
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     // styling classes from the JS files.
@@ -21,30 +21,33 @@ const Form = ({ currentId, setCurrentId }) => {
     const dispatch = useDispatch();
 
     // populates the values of the form with a callback and a dependency array // 
-   useEffect(() => {
-       if(post) {
-           console.log(post)
-           setPostData(post);
-       }  
-   }, [post])
+    useEffect(() => {
+        if (post) {
+            console.log(post)
+            setPostData(post);
+        }
+    }, [post])
 
     // when user hit submit it will send a post request with the data they added // 
     const handleSubmit = (e) => {
-        
+
         e.preventDefault();
 
-        if(currentId) {
+        if (currentId) {
             dispatch(updatePost(currentId, postData));
         } else {
             dispatch(createPost(postData));
-        // regardless of if or else we will clear the form and call the clear function at the end //     
+            // regardless of if or else we will clear the form and call the clear function at the end //     
         }
         clear();
     }
-// This function will clear form after submit is click upon editing a post // 
+    //this will grab the username and automatically render it in creator
+    const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+    const email = user.result.email;
+    // This function will clear form after submit is click upon editing a post // 
     const clear = () => {
         setCurrentId(null);
-        setPostData({creator: '', title: '', message: '', tags: '', location:'', selectedFile: ''});
+        setPostData({ creator: '', title: '', message: '', tags: '', location: '', selectedFile: '', user: '', });
     }
 
     const tags = [
@@ -69,41 +72,59 @@ const Form = ({ currentId, setCurrentId }) => {
             label: 'Other Fun Place',
         },
     ];
-    //this will grab the username and automatically render it in creator
-    const userName = `${postData.creator}`;
+    //sets the option to pick user data
+    const userData = [
+        {
+            value: email,
+            label: email
+        }
+    ];
 
-// Line 59 if current ID of the post exists the string will change to "Editing" otherwise it will say "upload" // 
+
+    // Line 59 if current ID of the post exists the string will change to "Editing" otherwise it will say "upload" // 
     return (
         <Paper class={classes.paper}>
 
-        <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-        <Typography varient='h6'>{ currentId ? 'Editing' : 'Upload' } Your Discovery {userName}!</Typography>
+            <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+                <Typography varient='h6'>{currentId ? 'Editing' : 'Upload'} Your Discovery!</Typography>
 
-        {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/> */}
+                {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData})}/>
 
-        <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
+                <Typography name="creator" variant="filled" label="User" fullWidth value={postData.user} onChange={() => setPostData({ ...postData})} /> */}
+                <TextField name="select" align='left' variant="filled" label="Select your email" fullWidth value={postData.userData} onChange={(e) => setPostData({ ...postData, creator: e.target.value, user: e.target.value })} select >
 
-        <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
+                    {userData.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                    ))}
+                </TextField>
 
-        {/* <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split( ',' ) })}/> */}
+                {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/> */}
 
-        <TextField name="select" align = 'left' variant="filled"  label="Select a tag" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })} select >
-                                  
-                        {tags.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
-                                {option.label}
-                            </MenuItem>
-                        ))}
-                    </TextField>
-        <TextField name="location" variant="outlined" label="Location" fullWidth value={postData.location} onChange={(e) => setPostData({ ...postData, location: e.target.value })}/>
-        
-        <div className={classes.fileInput}><FileBase type="file" multiple={ false } onDone={({base64}) => setPostData({...postData, selectedFile: base64})} />
-        <br /><br />
-        <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
+                <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
 
-        <Button style={{ marginBottom:'40px'}} variant="contained" color="primary" size="medium" onClick={clear} fullWidth>Clear Fields</Button>
-        </div>
-        </form>
+                <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+
+                {/* <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split( ',' ) })}/> */}
+
+                <TextField name="select" align='left' variant="filled" label="Select a tag" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })} select >
+
+                    {tags.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                    ))}
+                </TextField>
+                <TextField name="location" variant="outlined" label="Location" fullWidth value={postData.location} onChange={(e) => setPostData({ ...postData, location: e.target.value })} />
+
+                <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
+                    <br /><br />
+                    <Button className={classes.buttonSubmit} variant="contained" color="default" size="large" type="submit" fullWidth>Submit</Button>
+
+                    <Button style={{ marginBottom: '40px' }} variant="contained" color="primary" size="medium" onClick={clear} fullWidth>Clear Fields</Button>
+                </div>
+            </form>
         </Paper>
     );
 }
