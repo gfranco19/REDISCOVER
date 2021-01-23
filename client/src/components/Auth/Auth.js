@@ -77,10 +77,15 @@ const Auth = () => {
                             <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
                             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
                             </Grid>
+
+                            <br></br>
+                            <br></br>
+
                             
                             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                                 { isSignup ? 'Sign up for Rediscover' : 'Login' }
                             </Button>
+
                             <GoogleLogin 
                                 clientId="331387044870-4vcca4gks0t7qnhb4r2gcrv3uotikji5.apps.googleusercontent.com"
                                 render={(renderProps) =>(

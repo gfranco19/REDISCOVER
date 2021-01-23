@@ -25,9 +25,6 @@ function App() {
     <div>
       <Router>
         <Route exact path="/" component={Index} />
-        <Route exact path="/auth" component={Auth} />
-        <Route path="/Register" component={Register} />
-        <Route path="/Login" component={Login} />
         <Route path="/haunted" component={Haunted} />
         <Route path="/historical" component={Historical} />
         <Route path="/film" component={Film} />
@@ -37,6 +34,10 @@ function App() {
         <Route path="/explorer" component={Explore} />
 
         <DarkMode />
+
+        <Route exact path="/auth" component={Auth} />
+        <Route path="/Register" component={Register} />
+        <Route path="/Login" component={Login} />
         
         {/* <Footer /> */}
       </Router>
