@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    padding: theme.spacing(2),
+    padding: theme.spacing(3),
   },
   root: {
     '& .MuiTextField-root': {
@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '70%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
   },
   submit: {

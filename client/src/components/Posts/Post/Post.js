@@ -14,8 +14,15 @@ import { deletePost, likePost } from '../../../actions/posts';
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
+    
+
     return (
-        <Card className={classes.card}>
+        <Card className={classes.card}
+            style={{
+                margin: "auto",
+                boxShadow: "0 11px 40px -12px rgba(0,0,0,1.0)",  
+            }}
+        >
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay} >
                 <Typography variant="h6" style={{ fontFamily: 'oswald' }}> {post.creator}</Typography>
@@ -30,9 +37,9 @@ const Post = ({ post, setCurrentId }) => {
                 <Typography variant="body2" color="primary" component="h2">{post.tags.map((tag) => `#${tag}  `)}</Typography>
             </div>
             <Typography className={classes.title} color="textSecondary" gutterBottom variant="h5" >{post.title}</Typography>
-            <CardContent>
+            <CardContent style={{ padding: '4px'}}>
                 <Typography variant="body2" color="textSecondary" component="p" style={{ color: 'black' }} >{post.message}</Typography>
-            </CardContent>
+                <hr></hr></CardContent>
 
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))} >

@@ -12,7 +12,7 @@ export default makeStyles({
   },
   card: {
     display: 'flex',
-    border: 'solid 1px',
+    // border: 'solid 1px',
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderRadius: '15px',
@@ -41,9 +41,6 @@ export default makeStyles({
     
   },
 
-  // content: {
-  //   padding: '7px',
-  // },
 
   details: {
     display: 'flex',
