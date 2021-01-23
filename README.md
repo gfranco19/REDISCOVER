@@ -33,7 +33,7 @@ Please visit our GitHubs to view all of our projects:
     https://github.com/shaydaniel7
     https://github.com/gfranco19
     https://github.com/Tbonexas
-    https://www.github.com/CdmMandalorian
+    https://github.com/CdmMandalorian
     https://github.com/covo40
 
 Questions
@@ -46,13 +46,13 @@ Contact us at:
  
 
 ## LIVE LINK: 
-<a href="">Rediscover</a>
+<a href="https://rediscoverapp.netlify.app/">Rediscover</a>
 
 
-## Screenshots of ReDiscover:
-<img src="./client/src/assets/images/.png">
-<img src="./client/src/assets/images/.png">
-<img src="./client/src/assets/images/.png">
+## Screenshots of Rediscover:
+<img src="./client/src/assets/images/rediscoverss(1).png">
+<img src="./client/src/assets/images/rediscoverss(2).png">
+<img src="./client/src/assets/images/rediscoverss(3).png">
 
 ## LIVE DEMO GIF's OF Rediscover:
 <img src="./client/src/assets/images/rediscover.gif">
