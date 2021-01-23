@@ -26,8 +26,8 @@ function App(props) {
         </Route>
 
         <Route exact path="/auth">
-          <Auth />
-          <DarkMode theme={theme} setTheme={setTheme} />
+        <DarkMode theme={theme} setTheme={setTheme} />
+        <Auth />
         </Route>
 
         <Route path="/haunted" >
@@ -71,4 +71,19 @@ function App(props) {
 }
 
 export default App;
+
+{/* <Route exact path="/" component={Index} />
+        <Route path="/haunted" component={Haunted} />
+        <Route path="/historical" component={Historical} />
+        <Route path="/film" component={Film} />
+        <Route path="/misc" component={Misc} />
+        <Route path="/account" component={Account} />
+        <Route path="/nature" component={Nature} />
+        <Route path="/explorer" component={Explore} />
+
+        <DarkMode />
+
+        <Route exact path="/auth" component={Auth} />
+        <Route path="/Register" component={Register} />
+        <Route path="/Login" component={Login} /> */}
 
