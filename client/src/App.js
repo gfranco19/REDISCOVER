@@ -1,10 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Footer from "./components/Footer/Footer"
 import Index from "./pages/IndexPage/Index";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
 import Haunted from "./pages/Haunted/Haunted";
 import Historical from "./pages/Historical/Historical";
 import Film from "./pages/Film/Film";
@@ -14,31 +11,60 @@ import Nature from "./pages/Nature/Nature";
 import Explore from "./pages/ExplorePage/Explore"
 import Auth from "./components/Auth/Auth";
 
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DarkMode from './components/darkMode/darkMode';
 
-function App() {
+function App(props) {
+  const [theme, setTheme] = useState(true);
 
   return (
     <div>
       <Router>
-        <Route exact path="/" component={Index} />
-        <Route exact path="/auth" component={Auth} />
-        <Route path="/Register" component={Register} />
-        <Route path="/Login" component={Login} />
-        <Route path="/haunted" component={Haunted} />
-        <Route path="/historical" component={Historical} />
-        <Route path="/film" component={Film} />
-        <Route path="/misc" component={Misc} />
-        <Route path="/account" component={Account} />
-        <Route path="/nature" component={Nature} />
-        <Route path="/explorer" component={Explore} />
 
-        <DarkMode />
-        
-        {/* <Footer /> */}
+        <Route exact path="/">
+          <Index />
+        </Route>
+
+        <Route exact path="/auth">
+          <Auth />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
+
+        <Route path="/haunted" >
+          <Haunted />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
+
+        <Route path="/historical">
+          <Historical />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route >
+
+        <Route path="/film" >
+          <Film />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
+
+        <Route path="/misc" >
+          <Misc />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route >
+
+        <Route path="/account" >
+          <Account />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route >
+
+        <Route path="/nature" >
+          <Nature />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
+
+        <Route path="/explorer" >
+          <Explore />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
+
       </Router>
     </div>
   )
