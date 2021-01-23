@@ -158,4 +158,21 @@ export const likePost = async (req, res) => {
 
     res.json(updatedPost);
 }
+
+//find post where the username is === to creator
+export const getUser = async (req, res) => {
+    try{
+    const userName = await PostMessage.find({
+        user:"",
+        creator:""
+    });
+
+    console.log('Found User', + userName);
+
+    return res.status(200).json( userName )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
 export default router;

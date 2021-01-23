@@ -25,3 +25,5 @@ export const fetchFilm = () => axios.get(`${url}/film`);
 export const fetchNature = () => axios.get(`${url}/nature`);
 
 export const fetchMisc = () => axios.get(`${url}/misc`);
+
+export const fetchUser = (user) => axios.get(`${url}/${user}`);

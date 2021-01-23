@@ -70,7 +70,7 @@ const Auth = (props) => {
 
             <source src={cityVideo} type='video/mp4' />
         </video>
-
+        <br /><br />
             <Container component="main" maxwidth="xs">
 
                 <Paper className={classes.paper} elevation={3} style= {{marginTop : 'px'}} >
@@ -79,7 +79,7 @@ const Auth = (props) => {
                     </Avatar>
                     <Typography variant="h5" style={{ color: 'black', padding: '10px' }}>{isSignup ? "Sign up for Rediscover" : "Login to Rediscover"}</Typography>
                     <form className={classes.form} onSubmit={handleSubmit}>
-                        <Grid container spacing={2} style={{ marginBottom: '20px' }}>
+                        <Grid container spacing={2} style={{ marginBottom: '8px' }}>
                             {
                                 isSignup && (
                                     <>

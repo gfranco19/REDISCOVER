@@ -8,7 +8,6 @@ const postSchema = mongoose.Schema({
     creator: String,
     tags: [String],
     location: String,
-    userName: String,
     // FIND A WAY TO SHORTEN THE STRING //
     selectedFile: String, 
 
@@ -19,8 +18,7 @@ const postSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: new Date()
-    },
-
+    }
 });
 
 // convert schema into a model //

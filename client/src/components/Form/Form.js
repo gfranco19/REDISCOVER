@@ -11,8 +11,8 @@ import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', location:'', selectedFile: '' });
-    
+    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', location: '', selectedFile: '', user: '' });
+
     // To find the posts will the same ID to be updated with currentID to find a specific post. //
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     // styling classes from the JS files.
@@ -21,30 +21,33 @@ const Form = ({ currentId, setCurrentId }) => {
     const dispatch = useDispatch();
 
     // populates the values of the form with a callback and a dependency array // 
-   useEffect(() => {
-       if(post) {
-           console.log(post)
-           setPostData(post);
-       }  
-   }, [post])
+    useEffect(() => {
+        if (post) {
+            console.log(post)
+            setPostData(post);
+        }
+    }, [post])
 
     // when user hit submit it will send a post request with the data they added // 
     const handleSubmit = (e) => {
-        
+
         e.preventDefault();
 
-        if(currentId) {
+        if (currentId) {
             dispatch(updatePost(currentId, postData));
         } else {
             dispatch(createPost(postData));
-        // regardless of if or else we will clear the form and call the clear function at the end //     
+            // regardless of if or else we will clear the form and call the clear function at the end //     
         }
         clear();
     }
-// This function will clear form after submit is click upon editing a post // 
+    //this will grab the username and automatically render it in creator
+    const [user] = useState(JSON.parse(localStorage.getItem('profile')));
+    const email = user.result.email;
+    // This function will clear form after submit is click upon editing a post // 
     const clear = () => {
         setCurrentId(null);
-        setPostData({creator: '', title: '', message: '', tags: '', location:'', selectedFile: ''});
+        setPostData({ creator: '', title: '', message: '', tags: '', location: '', selectedFile: '', user: '', });
     }
 
     return(
@@ -53,7 +56,7 @@ const Form = ({ currentId, setCurrentId }) => {
         <Typography varient='h6'>Have a  place to share? Upload it below:</Typography>
         <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
 
-        <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
+                {/* <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split( ',' ) })}/> */}
 
         <TextField name="message" variant="outlined" label="Message" fullWidth value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })}/>
         <TextField name="tags" variant="outlined" label="Tags" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })}/>
