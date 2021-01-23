@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Avatar, Button, Paper, Grid, Typography, Container } from "@material-ui/core"
 import { GoogleLogin } from "react-google-login";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Icon from "./icon"
 import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -12,7 +14,8 @@ const Auth = (props) => {
     const [showPassword, setShowPassword] = useState(false);
     // use within switchMode function for either signing up or a member with a callback also reset show password when user switches the mode // 
     const [isSignup, setIsSignup] = useState(false);
-    // make this switchable 
+    const dispatch = useDispatch();
+    const history = useHistory();
     // const isSignup = true;
 
     // this will handle showing the users password if requested by user. using a previouse state with a callback function. if it's on turn it off if its off turn it on // 
@@ -31,11 +34,24 @@ const Auth = (props) => {
         handleShowPassword(false);
     };
     // gain access to a full response // 
-    const googleSuccess = (res) => {
+    const googleSuccess = async (res) => {
+        // console.log(res)
+        const result = res?.profileObj; // will not get an error if res does not exists. //
+        const token = res?.tokenId;
 
+        try {
+            dispatch({ type: 'AUTH', data: { result, token } });
+
+            history.push("/account")
+        } catch (error) {
+            console.log(error);
+        }
     };
 
-    const googleFailure = () => {
+
+
+    const googleFailure = (error) => {
+        console.log(error)
         console.log("Google Sign in was unsuccessful.")
     };
 
@@ -64,12 +80,21 @@ const Auth = (props) => {
 
                         </Grid>
 
+                        <br></br>
+                        <br></br>
+
+
+                        <Button type="submit" fullWidth variant="contained" color="default" className={classes.submit}>
+                            {isSignup ? 'Sign up for Rediscover' : 'Login'}
+                        </Button>
+
                         <GoogleLogin
-                            clientId="GOOGLE ID"
+                            clientId="331387044870-4vcca4gks0t7qnhb4r2gcrv3uotikji5.apps.googleusercontent.com"
                             render={(renderProps) => (
                                 <Button
                                     className={classes.googleButton}
-                                    color="default"
+                                    color="primary"
+
                                     fullWidth
                                     onClick={renderProps.onClick}
                                     disabled={renderProps.disabled}
@@ -83,21 +108,15 @@ const Auth = (props) => {
                             cookiePolicy="single_host_origin"
 
                         />
-
-
-
-                        <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} style={{ padding: '13px' }}>
-                            {isSignup ? 'Sign up for Rediscover' : 'Login to Rediscover'}
-                        </Button>
                         <Grid container justify="flex-end">
                             <Grid item>
                                 <Button onClick={switchMode}>
                                     {isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
                                 </Button>
-
                             </Grid>
-
                         </Grid>
+
+
                         <br />
                         <div>
                             <img src={Binoculars} alt="binoculars" height="150px" />
@@ -105,7 +124,7 @@ const Auth = (props) => {
                     </form>
                 </Paper> <br />
             </Container>
-        </div>
+        </div >
 
     )
 }
