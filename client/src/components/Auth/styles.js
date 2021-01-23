@@ -32,6 +32,11 @@ export default makeStyles((theme) => ({
     alignContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    textAlign: 'center',
+    display: 'block',
+    margin: 'auto',
+    width: '100%'
+    
 
   },
   submit: {
