@@ -44,6 +44,7 @@ const Form = ({ currentId, setCurrentId }) => {
     //this will grab the username and automatically render it in creator
     const [user] = useState(JSON.parse(localStorage.getItem('profile')));
     const email = user.result.email;
+    const name = user.result.name;
     // This function will clear form after submit is click upon editing a post // 
     const clear = () => {
         setCurrentId(null);
@@ -73,10 +74,16 @@ const Form = ({ currentId, setCurrentId }) => {
         },
     ];
     //sets the option to pick user data
-    const userData = [
+    const userEmail = [
         {
             value: email,
             label: email
+        }
+    ];
+    const userName = [
+        {
+            value: name,
+            label: name
         }
     ];
 
@@ -91,9 +98,9 @@ const Form = ({ currentId, setCurrentId }) => {
                 {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData})}/>
 
                 <Typography name="creator" variant="filled" label="User" fullWidth value={postData.user} onChange={() => setPostData({ ...postData})} /> */}
-                <TextField name="select" align='left' variant="filled" label="Select your email" fullWidth value={postData.userData} onChange={(e) => setPostData({ ...postData, creator: e.target.value, user: e.target.value })} select >
+                <TextField name="select" align='left' variant="filled" label="Select Creator" fullWidth value={postData.userName} onChange={(e) => setPostData({ ...postData, user: e.target.value })} select >
 
-                    {userData.map((option) => (
+                    {userName.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
                             {option.label}
                         </MenuItem>
@@ -111,6 +118,14 @@ const Form = ({ currentId, setCurrentId }) => {
                 <TextField name="select" align='left' variant="filled" label="Select a tag" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })} select >
 
                     {tags.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                    ))}
+                </TextField>
+                <TextField name="select" align='left' variant="filled" label="Select your email" fullWidth value={postData.userEmail} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} select >
+
+                    {userEmail.map((option) => (
                         <MenuItem key={option.value} value={option.value}>
                             {option.label}
                         </MenuItem>
