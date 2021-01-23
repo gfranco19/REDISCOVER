@@ -11,7 +11,7 @@ function Account() {
             <div className="palmsBackground">
                 <br /> <br /> <br />
                     
-                    <h1>My account</h1>
+                    <h1>Welcome</h1>
                     <Uploads />           
             </div>
         </div>

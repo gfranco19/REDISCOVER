@@ -118,3 +118,13 @@ export const getMisc = () => async (dispatch) => {
         console.log(error.message)
     }
 };
+
+export const getUser = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchUser();
+        console.log("THE POST DTA IS", data)
+        dispatch ({ type: 'FETCH', payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};

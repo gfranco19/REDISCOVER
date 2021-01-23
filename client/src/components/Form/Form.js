@@ -69,15 +69,17 @@ const Form = ({ currentId, setCurrentId }) => {
             label: 'Other Fun Place',
         },
     ];
+    //this will grab the username and automatically render it in creator
+    const userName = `${postData.creator}`;
 
 // Line 59 if current ID of the post exists the string will change to "Editing" otherwise it will say "upload" // 
     return (
         <Paper class={classes.paper}>
 
         <form autoComplete="off" no noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
-        <Typography varient='h6'>{ currentId ? 'Editing' : 'Upload' } Your Discovery!</Typography>
+        <Typography varient='h6'>{ currentId ? 'Editing' : 'Upload' } Your Discovery {userName}!</Typography>
 
-        <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/>
+        {/* <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })}/> */}
 
         <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
 
