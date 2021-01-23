@@ -12,7 +12,7 @@ const Posts = ({ setCurrentId }) => {
     // mobile devices comp for Grids // 
     return (
         !posts.length ? <CircularProgress /> : (
-            
+            <div>
             <Grid className={classes.container} container alignItems="stretch" spacing={2}>
                 {posts.map((post) => (
                     <Grid key={post._id} item xs={12}sm={3} >
@@ -20,6 +20,7 @@ const Posts = ({ setCurrentId }) => {
                     </Grid>
                     ))}
             </Grid>
+            </div>
         )
     );
 }
