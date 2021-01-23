@@ -8,6 +8,7 @@ import postRoutes from "./routes/posts.js";
 
 // initialize the app //
 const app = express(); 
+dotenv.config()
 
 // all routes within the postsRoutes will start with posts example not localhost 5000 but localhost:5000/posts // 
 
