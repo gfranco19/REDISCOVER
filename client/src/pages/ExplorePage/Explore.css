@@ -1,7 +1,7 @@
 .nightBackground {
     background: url("../../assets/images/night2.png") fixed;
     position: absolute;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     top: 1;
     width: 100%;

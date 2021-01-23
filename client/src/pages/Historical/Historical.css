@@ -1,13 +1,12 @@
 .historyBackground {
     background: url("../../assets/images/books1.png") fixed;
     position: absolute;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     top: 1;
     width: 100%;
     min-height: 130%;
     margin: 0;
-    background-attachment: fixed;
 }
 
 @media screen and (max-width: 765px) {  
