@@ -6,6 +6,7 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux'
 import { likePost } from '../../../actions/posts';
 
+
 const PublicPost = ({ post }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
