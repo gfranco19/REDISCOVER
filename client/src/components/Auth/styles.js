@@ -25,20 +25,29 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: '#895b50'
+    
   },
   form: {
     marginTop: theme.spacing(3),
     alignContent: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    textAlign: 'center',
+    display: 'block',
+    margin: 'auto',
+    width: '80%'
+    
 
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    padding: '12px'
+
   },
   googleButton: {
-    padding: '13px'
+    padding: '12px',
+    backgroundColor: '#497587'
     // marginBottom: theme.spacing(2),
   },
 }));
