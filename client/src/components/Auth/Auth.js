@@ -5,19 +5,18 @@ import Icon from "./icon"
 import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from './Input';
+import Binoculars from '../../assets/images/binocularsblack copy.png'
 
-
-
-const Auth = () => {
+const Auth = (props) => {
     const classes = useStyles();
-    const [showPassword, setShowPassword ] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     // use within switchMode function for either signing up or a member with a callback also reset show password when user switches the mode // 
-    const [ isSignup, setIsSignup] = useState(false);
+    const [isSignup, setIsSignup] = useState(false);
     // make this switchable 
     // const isSignup = true;
 
     // this will handle showing the users password if requested by user. using a previouse state with a callback function. if it's on turn it off if its off turn it on // 
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => ! prevShowPassword)
+    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
 
     const handleSubmit = () => {
 
@@ -32,69 +31,82 @@ const Auth = () => {
         handleShowPassword(false);
     };
     // gain access to a full response // 
-   const googleSuccess = (res) => {
+    const googleSuccess = (res) => {
 
-   };
+    };
 
-   const googleFailure = () => {
+    const googleFailure = () => {
         console.log("Google Sign in was unsuccessful.")
-   };
- 
+    };
+
 
     return (
-       <Container component="main" maxwidth="xs">
-           <Paper className={classes.paper} elevation={3}>
-               <Avatar className={classes.avatar}>
-                   <LockOutlinedIcon />
-               </Avatar>
-               <Typography variant ="h5">{isSignup ? "Sign up for Rediscover" : "Login to Rediscover"}</Typography>
-               <form className={classes.form} onSubmit={handleSubmit}>
-                   <Grid container spacing={2}>
-                        {
-                            isSignup && (
-                                <>
-                                    <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
-                                    <Input name="lastName" label="Last Name" handleChange={handleChange} half />
-                                </>
-                            )}
+        <div className='center'>
+            <Container component="main" maxwidth="xs">
+
+                <Paper className={classes.paper} elevation={3}  >
+                    <Avatar className={classes.avatar}>
+                        <LockOutlinedIcon />
+                    </Avatar>
+                    <Typography variant="h5" style={{ color: 'black', padding: '10px' }}>{isSignup ? "Sign up for Rediscover" : "Login to Rediscover"}</Typography>
+                    <form className={classes.form} onSubmit={handleSubmit}>
+                        <Grid container spacing={2} style={{ marginBottom: '20px' }}>
+                            {
+                                isSignup && (
+                                    <>
+                                        <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
+                                        <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+                                    </>
+                                )}
                             <Input name="email" label=" Email Address" handleChange={handleChange} type="email" />
                             <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
-                            { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
-                            </Grid>
+                            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
 
-                            <GoogleLogin 
-                                clientId="GOOGLE ID"
-                                render={(renderProps) =>(
-                                    <Button 
-                                    className={classes.googleButton} 
-                                    color="primary" 
-                      
-                                    fullWidth 
-                                    onClick={renderProps.onClick} 
-                                    disabled={renderProps.disabled} 
-                                    startIcon={<Icon />} 
+                        </Grid>
+
+                        <GoogleLogin
+                            clientId="GOOGLE ID"
+                            render={(renderProps) => (
+                                <Button
+                                    className={classes.googleButton}
+                                    color="default"
+                                    fullWidth
+                                    onClick={renderProps.onClick}
+                                    disabled={renderProps.disabled}
+                                    startIcon={<Icon />}
                                     variant="contained">
-                                        Sign up with Google
-                                    </Button>
-                                )}
-                                onSuccess={googleSuccess}
-                                onFailure={googleFailure}
-                                cookiePolicy="single_host_origin"
+                                    Sign up with Google
+                                </Button>
+                            )}
+                            onSuccess={googleSuccess}
+                            onFailure={googleFailure}
+                            cookiePolicy="single_host_origin"
 
-                            />
-                            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-                                { isSignup ? 'Sign up for Rediscover' : 'Login to Rediscover' }
-                            </Button>
-                            <Grid container justify="flex-end">
-                                <Grid item>
-                                    <Button onClick={switchMode}>
-                                        { isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
-                                    </Button>
-                                </Grid>
+                        />
+
+
+
+                        <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} style={{ padding: '13px' }}>
+                            {isSignup ? 'Sign up for Rediscover' : 'Login to Rediscover'}
+                        </Button>
+                        <Grid container justify="flex-end">
+                            <Grid item>
+                                <Button onClick={switchMode}>
+                                    {isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
+                                </Button>
+
                             </Grid>
-               </form>
-           </Paper>
-       </Container>
+
+                        </Grid>
+                        <br />
+                        <div>
+                            <img src={Binoculars} alt="binoculars" height="150px" />
+                        </div>
+                    </form>
+                </Paper> <br />
+            </Container>
+        </div>
+
     )
 }
 

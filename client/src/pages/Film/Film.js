@@ -2,7 +2,8 @@ import React from "react";
 import "./Film.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderFilm from "./RenderFilm";
-function Film() {
+function Film(props) {
+    
     return (
         <div>
             <NavTabs />

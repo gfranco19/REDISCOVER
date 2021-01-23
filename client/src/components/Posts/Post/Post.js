@@ -8,19 +8,15 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux'
 import { deletePost, likePost } from '../../../actions/posts';
 
-
-
-
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    
 
     return (
         <Card className={classes.card}
             style={{
                 margin: "auto",
-                boxShadow: "0 11px 40px -12px rgba(0,0,0,1.0)",  
+                boxShadow: "0 11px 40px -6px rgba(0,0,0,1.0)",  
             }}
         >
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
