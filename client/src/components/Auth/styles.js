@@ -1,16 +1,26 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
+
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     padding: theme.spacing(3),
+    maxWidth: '600px',
+    backgroundColor: 'white',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    alignContent: 'center',
+    justifyContent: 'center',
+
   },
+  
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
+      
     },
   },
   avatar: {
@@ -18,13 +28,17 @@ export default makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
-    width: '70%', // Fix IE 11 issue.
     marginTop: theme.spacing(3),
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
   googleButton: {
-    marginBottom: theme.spacing(2),
+    padding: '13px'
+    // marginBottom: theme.spacing(2),
   },
 }));

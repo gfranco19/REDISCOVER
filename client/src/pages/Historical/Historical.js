@@ -2,7 +2,8 @@ import React from "react";
 import "./Historical.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderHistorical from "./RenderHistorical";
-function Historical() {
+function Historical(props) {
+ 
     return (
         <div>
             <NavTabs />

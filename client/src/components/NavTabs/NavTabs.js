@@ -58,7 +58,6 @@ const useStyles = makeStyles((theme) => ({
       }
     }));
     
-
 export default function ScrollableTabsButtonForce() {
   const classes = useStyles();
   const history = useHistory();

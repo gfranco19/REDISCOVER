@@ -17,11 +17,9 @@ h1 {
     text-shadow: 1px 1px 1px #000000;
 }
 
-
 h2 {
     font-size: 35px;
     text-align: center;
-    /* font-family: 'Oswald', sans-serif;    */
     /* text-shadow: 1px 1px 1px #000000; */
     font-family: 'Oswald', sans-serif;   
 }
@@ -36,7 +34,6 @@ h5 {
 .MuiGrid-root.MuiContainer-root {
     margin: 0px!important;
     padding: 0px!important;
-    /* margin-bottom: 30px; */
 }
 .MuiContainer-root.MuiContainer-maxWidthLg {
     max-width: none;

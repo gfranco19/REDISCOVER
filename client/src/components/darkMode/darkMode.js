@@ -17,18 +17,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function DarkMode() {
-  const [theme, setTheme] = useState(true);
+function DarkMode(props) {
+
+  console.log(this, props)
+
   const classes = useStyles();
-  const icon = !theme ? <Brightness7Icon /> : <Brightness3Icon />;
-  const appliedTheme = createMuiTheme(theme ? light : dark);
+  const icon = !props.theme ? <Brightness7Icon /> : <Brightness3Icon />;
+  const appliedTheme = createMuiTheme(props.theme ? light : dark);
 
   return (
+ 
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
       <Paper elevation={0} >
         <div className={classes.root}>
-          <IconButton edge="end" color="inherit" aria-label="mode" onClick={() => setTheme(!theme)}>
+          <IconButton edge="end" color="inherit" aria-label="mode" onClick={() => props.setTheme(!props.theme)}>
             {icon}
           </IconButton>
         </div>
@@ -41,16 +44,13 @@ export const light = {
   palette: {
     type: "light",
     background: { default: "#ffffff" },
-
   }
 };
 export const dark = {
   palette: {
     type: "dark",
-    background: { default: "#424242" },  
-  
-    },
-    
+    background: { default: "#424242" },   
+    },   
   }
 
 //Change in darkmode//
