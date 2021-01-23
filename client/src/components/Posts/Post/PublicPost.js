@@ -6,11 +6,17 @@ import moment from 'moment';
 import { useDispatch } from 'react-redux'
 import { likePost } from '../../../actions/posts';
 
+
 const PublicPost = ({ post }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     return (
-        <Card className={classes.card} >
+        <Card className={classes.card}
+            style={{
+                margin: "auto",
+                boxShadow: "0 16px 40px -6px rgba(0,0,0,1.0)",               
+            }}
+        >
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
             <div className={classes.overlay} >
                 <Typography variant="h6" style={{ fontFamily: 'oswald' }}> {post.creator}</Typography>
@@ -21,9 +27,9 @@ const PublicPost = ({ post }) => {
                 <Typography variant="body2" color="primary" component="h2">{post.tags.map((tag) => `#${tag}  `)}</Typography>
             </div>
             <Typography className={classes.title} color="textSecondary" gutterBottom variant="h5" >{post.title}</Typography>
-            <CardContent>
+            <CardContent style={{ padding: '4px' }}>
                 <Typography variant="body2" color="textSecondary" component="p" style={{ color: 'black', padding: '6px' }}>{post.message}</Typography>
-            </CardContent>
+                <hr></hr></CardContent>
 
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() => dispatch(likePost(post._id))} >
@@ -32,7 +38,7 @@ const PublicPost = ({ post }) => {
 
                 </Button>
                 <form action={'https://www.google.com/maps/dir/Current+Location/' + post.location} target="_blank">
-                    <button style={{ padding: '7px', border: 'none', borderRadius: '7px', backgroundColor: '#3f50b5', color: 'white' }} type="submit" >map it</button></form>
+                    <button style={{ padding: '7px', border: 'none', borderRadius: '7px', backgroundColor: '#3f50b5', color: 'white', marginRight: '4px', marginBottom: '4px' }} type="submit" >map it</button></form>
             </CardActions>
         </Card>
     );

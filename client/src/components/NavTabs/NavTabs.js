@@ -76,13 +76,13 @@ export default function ScrollableTabsButtonForce() {
             textColor="primary"
             aria-label="scrollable force tabs example"
           >
-            <Tab component={Link} label="Home" to ="/account" {...a11yProps(0)} /> <FontAwesomeIcon icon={faHouseUser} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Explore" to="/explorer"  {...a11yProps(1)} /> <FontAwesomeIcon icon={faCompass} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Haunted"  to="/haunted"  {...a11yProps(2)} /> <FontAwesomeIcon icon={faGhost} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Historical" to="/historical"  {...a11yProps(3)} /> <FontAwesomeIcon icon={faLandmark} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Film" to="/film"  {...a11yProps(4)} /> <FontAwesomeIcon icon={faFilm} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Nature" to="/nature"  {...a11yProps(7)} /> <FontAwesomeIcon icon={faTree} size="2x" fixedWidth></FontAwesomeIcon>
-            <Tab component={Link} label="Misc" to="/misc"  {...a11yProps(5)} /> <FontAwesomeIcon icon={faTags} size="2x" ></FontAwesomeIcon>
+            <Tab component={Link} label="Home" to ="/account" icon={<FontAwesomeIcon icon={faHouseUser} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(0)} /> 
+            <Tab component={Link} label="Explore" to="/explorer" icon={<FontAwesomeIcon icon={faCompass} size="2x" fixedWidth></FontAwesomeIcon>}  {...a11yProps(1)} /> 
+            <Tab component={Link} label="Haunted"  to="/haunted" icon={<FontAwesomeIcon icon={faGhost} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(2)} /> 
+            <Tab component={Link} label="Historical" to="/historical" icon={<FontAwesomeIcon icon={faLandmark} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(3)} /> 
+            <Tab component={Link} label="Film" to="/film" icon={<FontAwesomeIcon icon={faFilm} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(4)} /> 
+            <Tab component={Link} label="Nature" to="/nature" icon={<FontAwesomeIcon icon={faTree} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(7)} /> 
+            <Tab component={Link} label="Misc" to="/misc" icon={<FontAwesomeIcon icon={faTags} size="2x" ></FontAwesomeIcon>} {...a11yProps(5)} /> 
 
           </Tabs>
         </AppBar>
