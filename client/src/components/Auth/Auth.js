@@ -105,7 +105,7 @@ const Auth = (props) => {
                                     disabled={renderProps.disabled}
                                     startIcon={<Icon />}
                                     variant="contained">
-                                    Login with Google
+                                    Login to Rediscover with Google
                                 </Button>
                             )}
                             onSuccess={googleSuccess}
@@ -119,13 +119,14 @@ const Auth = (props) => {
                         </Grid>
 
 
-                        <br />
+                        <br /><br /><br />
                         <div>
                             <img src={Binoculars} alt="binoculars" height="100px" />
                         </div>
-                    </form>
-                </Paper> <br />
+                    </form><br />
+                </Paper> 
             </Container>
+            
         </div >
 
     )

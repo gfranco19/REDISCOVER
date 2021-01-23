@@ -36,7 +36,7 @@ export default makeStyles((theme) => ({
     textAlign: 'center',
     display: 'block',
     margin: 'auto',
-    width: '100%'
+    width: '80%'
     
 
   },
