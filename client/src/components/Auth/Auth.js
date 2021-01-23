@@ -118,7 +118,7 @@ const Auth = (props) => {
                                     disabled={renderProps.disabled}
                                     startIcon={<Icon />}
                                     variant="contained">
-                                    Sign up with Google
+                                    Login with Google
                                 </Button>
                             )}
                             onSuccess={googleSuccess}
