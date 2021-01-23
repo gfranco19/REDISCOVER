@@ -17,7 +17,8 @@ export default makeStyles({
     justifyContent: 'space-between',
     borderRadius: '15px',
     height: '100%',
-    position: 'relative',    
+    position: 'relative',
+    elevation: '3',
     
   },
   overlay: {
@@ -31,13 +32,15 @@ export default makeStyles({
     position: 'absolute',
     top: '20px',
     right: '20px',
-    color: 'white'
+    color: 'white',
+    
 
   },
   grid: {
     display: 'flex',
     
   },
+
 
   details: {
     display: 'flex',
