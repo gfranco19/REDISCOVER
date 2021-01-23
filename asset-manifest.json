@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/finalProject/static/css/main.4aadf89d.chunk.css",
+    "main.js": "/finalProject/static/js/main.65a020a9.chunk.js",
+    "main.js.map": "/finalProject/static/js/main.65a020a9.chunk.js.map",
+    "runtime-main.js": "/finalProject/static/js/runtime-main.381f4336.js",
+    "runtime-main.js.map": "/finalProject/static/js/runtime-main.381f4336.js.map",
+    "static/css/2.ae9f1eb3.chunk.css": "/finalProject/static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.79e46afe.chunk.js": "/finalProject/static/js/2.79e46afe.chunk.js",
+    "static/js/2.79e46afe.chunk.js.map": "/finalProject/static/js/2.79e46afe.chunk.js.map",
+    "index.html": "/finalProject/index.html",
+    "static/css/2.ae9f1eb3.chunk.css.map": "/finalProject/static/css/2.ae9f1eb3.chunk.css.map",
+    "static/css/main.4aadf89d.chunk.css.map": "/finalProject/static/css/main.4aadf89d.chunk.css.map",
+    "static/js/2.79e46afe.chunk.js.LICENSE.txt": "/finalProject/static/js/2.79e46afe.chunk.js.LICENSE.txt",
+    "static/media/Historical.css": "/finalProject/static/media/books1.f65f4031.png",
+    "static/media/Film.css": "/finalProject/static/media/film1.d6824619.png",
+    "static/media/Nature.css": "/finalProject/static/media/nature.70f09687.png",
+    "static/media/Explore.css": "/finalProject/static/media/night2.69ad2f09.png",
+    "static/media/Account.css": "/finalProject/static/media/palms.e711de35.png",
+    "static/media/Misc.css": "/finalProject/static/media/redlands.cede6462.png",
+    "static/media/Haunted.css": "/finalProject/static/media/spooky2.56112b1c.png",
+    "static/media/welcome.d08fb2a7.mp4": "/finalProject/static/media/welcome.d08fb2a7.mp4",
+    "static/media/whitelogo.55eb8982.png": "/finalProject/static/media/whitelogo.55eb8982.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.381f4336.js",
+    "static/css/2.ae9f1eb3.chunk.css",
+    "static/js/2.79e46afe.chunk.js",
+    "static/css/main.4aadf89d.chunk.css",
+    "static/js/main.65a020a9.chunk.js"
+  ]
+}
