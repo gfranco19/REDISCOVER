@@ -18,10 +18,6 @@ const postSchema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: new Date()
-    },
-    user:{
-        type: String,
-        unique: true
     }
 });
 
