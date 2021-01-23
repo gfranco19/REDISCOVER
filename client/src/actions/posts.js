@@ -1,3 +1,4 @@
+import { FETCH_ALL, CREATE, UPDATE, DELETE, FETCH } from "../constants/actionTypes";
 import * as api from '../api';
 
 // action creaters are function that return actions //
@@ -7,7 +8,7 @@ export const getPosts = () => async (dispatch) => {
     try {
         const { data } = await api.fetchPosts();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH_ALL', payload: data });
+        dispatch ({ type: FETCH_ALL, payload: data });
 
     } catch (error) {
         console.log(error.message)
@@ -20,7 +21,7 @@ export const createPost = (post) => async (dispatch) => {
     try {
         const { data } = await api.createPost(post);
 
-        dispatch({ type: 'CREATE', payload: data});
+        dispatch({ type: CREATE, payload: data});
 
     } catch (error) {
         console.log(error);
@@ -31,7 +32,7 @@ export const updatePost = (id, post) => async (dispatch) => {
    try {
        const { data } = await api.updatePost(id,post);
 
-        dispatch({ type: 'UPDATE', payload: data });
+        dispatch({ type: UPDATE, payload: data });
 
 
    } catch (error) {
@@ -44,7 +45,7 @@ export const deletePost = (id) => async (dispatch) => {
     try {
         await api.deletePost(id);
 
-        dispatch({ type: 'DELETE', payload: id });
+        dispatch({ type: DELETE, payload: id });
     } catch (error) {
         console.log(error);
     }
@@ -54,7 +55,7 @@ export const likePost = (id) => async (dispatch) => {
     try {
         const { data } = await api.likePost(id);
 
-        dispatch({ type: 'UPDATE', payload: data });
+        dispatch({ type: UPDATE, payload: data });
     } catch (error) {
         console.log(error)
     }
@@ -65,7 +66,7 @@ export const getHaunted = () => async (dispatch) => {
     try {
         const { data } = await api.fetchHaunted();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH', payload: data });
+        dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
     }
@@ -77,7 +78,7 @@ export const getHistorical = () => async (dispatch) => {
     try {
         const { data } = await api.fetchHistorical();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH', payload: data });
+        dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
     }
@@ -89,7 +90,7 @@ export const getFilm = () => async (dispatch) => {
     try {
         const { data } = await api.fetchFilm();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH', payload: data });
+        dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
     }
@@ -101,7 +102,7 @@ export const getNature = () => async (dispatch) => {
     try {
         const { data } = await api.fetchNature();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH', payload: data });
+        dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
     }
@@ -113,7 +114,7 @@ export const getMisc = () => async (dispatch) => {
     try {
         const { data } = await api.fetchMisc();
         console.log("THE POST DTA IS", data)
-        dispatch ({ type: 'FETCH', payload: data });
+        dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
     }

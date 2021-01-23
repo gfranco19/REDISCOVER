@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Link } from "react-router-dom";
-import icon from '../Auth/icon';
+import { Toolbar, Typography, Button, Avatar } from "@material-ui/core";
+import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,7 +61,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ScrollableTabsButtonForce() {
   const classes = useStyles();
+  const history = useHistory();
   const [value, setValue] = React.useState(0);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
+
+
+
+  const logout = () => {
+    dispatch({ type: 'LOGOUT' });
+
+    history.push("/");
+
+    setUser(null);
+  };
+
+//   useEffect(() => {
+//     const token = user?.token;
+
+//     // JWT here
+
+//     setUser(JSON.parse(localStorage.getItem('profile')));
+// }, [])
+    // console.log(user);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -65,6 +91,7 @@ export default function ScrollableTabsButtonForce() {
 
   return (
     <div className={classes.root}>
+    
         <AppBar position="static" color="default"  elevation="0">
           <Tabs    
             value={value}
@@ -83,7 +110,17 @@ export default function ScrollableTabsButtonForce() {
             <Tab component={Link} label="Film" to="/film" icon={<FontAwesomeIcon icon={faFilm} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(4)} /> 
             <Tab component={Link} label="Nature" to="/nature" icon={<FontAwesomeIcon icon={faTree} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(7)} /> 
             <Tab component={Link} label="Misc" to="/misc" icon={<FontAwesomeIcon icon={faTags} size="2x" ></FontAwesomeIcon>} {...a11yProps(5)} /> 
-
+            <Toolbar className={classes.toolbar}>
+                        {user ? (
+                            <div className={classes.profile}>
+                                <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
+                                <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
+                                <Button variant="contained" className={classes.logout} color="secondary" onClick={logout} >Logout</Button>
+                            </div>
+                        ) : (
+                            <Button component={Link} to="/auth" variant="contained" color="primary" align="center">Welcome to Rediscover</Button>
+                        )}
+                    </Toolbar>
           </Tabs>
         </AppBar>
     </div>
