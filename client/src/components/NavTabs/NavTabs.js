@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -11,9 +13,10 @@ import HelpIcon from '@material-ui/icons/Help';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
 import ErrorIcon from '@material-ui/icons/Error';
-import Typography from '@material-ui/core/Typography';
+
 import Box from '@material-ui/core/Box';
 import { Link } from "react-router-dom";
+import { Toolbar, Typography, Button, Avatar } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,7 +64,29 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ScrollableTabsButtonForce() {
   const classes = useStyles();
+  const history = useHistory();
   const [value, setValue] = React.useState(0);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
+
+
+
+  const logout = () => {
+    dispatch({ type: 'LOGOUT' });
+
+    history.push("/");
+
+    setUser(null);
+  };
+
+//   useEffect(() => {
+//     const token = user?.token;
+
+//     // JWT here
+
+//     setUser(JSON.parse(localStorage.getItem('profile')));
+// }, [])
+    // console.log(user);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -87,7 +112,17 @@ export default function ScrollableTabsButtonForce() {
           <Tab component={Link} label="Film" to="/film" icon={<GroupWorkIcon />} {...a11yProps(4)} />
           <Tab component={Link} label="Nature" to="/nature" icon={<LocalFloristIcon />} {...a11yProps(7)} />
           <Tab component={Link} label="Misc" to="/misc" icon={<HelpIcon />} {...a11yProps(5)} />
-
+          <Toolbar className={classes.toolbar}>
+                        {user ? (
+                            <div className={classes.profile}>
+                                <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
+                                <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
+                                <Button variant="contained" className={classes.logout} color="secondary" onClick={logout} >Logout</Button>
+                            </div>
+                        ) : (
+                            <Button component={Link} to="/auth" variant="contained" color="primary" align="center">Welcome to Rediscover</Button>
+                        )}
+                    </Toolbar>
         </Tabs>
       </AppBar>
     </div>
