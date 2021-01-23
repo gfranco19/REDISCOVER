@@ -60,7 +60,7 @@ const Auth = (props) => {
         <div className='center'>
             <Container component="main" maxwidth="xs">
 
-                <Paper className={classes.paper} elevation={3}  >
+                <Paper className={classes.paper} elevation={3} style= {{marginTop : 'px'}} >
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>
@@ -79,9 +79,9 @@ const Auth = (props) => {
                             {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
 
                         </Grid>
-
-                        <br></br>
-                        <br></br>
+                        {/* <br /> */}
+                        <hr></hr>
+                        {/* <br /> */}
 
 
                         <Button type="submit" fullWidth variant="contained" color="default" className={classes.submit}>
@@ -100,7 +100,7 @@ const Auth = (props) => {
                                     disabled={renderProps.disabled}
                                     startIcon={<Icon />}
                                     variant="contained">
-                                    Sign up with Google
+                                    Login with Google
                                 </Button>
                             )}
                             onSuccess={googleSuccess}

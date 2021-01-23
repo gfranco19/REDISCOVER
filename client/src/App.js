@@ -26,8 +26,9 @@ function App(props) {
         </Route>
 
         <Route exact path="/auth">
-          <Auth />
-          <DarkMode theme={theme} setTheme={setTheme} />
+
+        <DarkMode theme={theme} setTheme={setTheme} />
+        <Auth />
         </Route>
 
         <Route path="/haunted" >
@@ -71,4 +72,6 @@ function App(props) {
 }
 
 export default App;
+
+
 
