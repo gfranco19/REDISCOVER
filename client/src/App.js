@@ -26,8 +26,7 @@ function App(props) {
         </Route>
 
         <Route exact path="/auth">
-
-        <DarkMode theme={theme} setTheme={setTheme} />
+        {/* <DarkMode theme={theme} setTheme={setTheme} /> */}
         <Auth />
         </Route>
 

@@ -8,18 +8,17 @@ import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from './Input';
 import Binoculars from '../../assets/images/binocularsblack copy.png'
+import cityVideo from '../../components/welcomeVideo/welcome.mp4'
 
 const Auth = (props) => {
     const classes = useStyles();
-    const [showPassword, setShowPassword] = useState(false);
-    // use within switchMode function for either signing up or a member with a callback also reset show password when user switches the mode // 
-    const [isSignup, setIsSignup] = useState(false);
+   
+    const [isSignup] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
     // const isSignup = true;
 
-    // this will handle showing the users password if requested by user. using a previouse state with a callback function. if it's on turn it off if its off turn it on // 
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
+    
 
     const handleSubmit = () => {
 
@@ -29,10 +28,7 @@ const Auth = (props) => {
 
     };
 
-    const switchMode = () => {
-        setIsSignup((previsSignUp) => !previsSignUp);
-        handleShowPassword(false);
-    };
+   
     // gain access to a full response // 
     const googleSuccess = async (res) => {
         // console.log(res)
@@ -57,7 +53,24 @@ const Auth = (props) => {
 
 
     return (
-        <div className='center'>
+        
+        <div className="video">
+        <video autoPlay muted loop
+            style={{
+
+                position: 'absolute',
+                width: '100%',
+                left: '50%',
+                top: '50%',
+                height: '100%',
+                objectFit: 'cover',
+                transform: 'translate(-50%, -50%',
+                zIndex: '-1'
+            }}>
+
+            <source src={cityVideo} type='video/mp4' />
+        </video>
+
             <Container component="main" maxwidth="xs">
 
                 <Paper className={classes.paper} elevation={3} style= {{marginTop : 'px'}} >
@@ -74,19 +87,11 @@ const Auth = (props) => {
                                         <Input name="lastName" label="Last Name" handleChange={handleChange} half />
                                     </>
                                 )}
-                            <Input name="email" label=" Email Address" handleChange={handleChange} type="email" />
-                            <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
-                            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
-
                         </Grid>
-                        {/* <br /> */}
-                        <hr></hr>
-                        {/* <br /> */}
 
 
-                        <Button type="submit" fullWidth variant="contained" color="default" className={classes.submit}>
-                            {isSignup ? 'Sign up for Rediscover' : 'Login'}
-                        </Button>
+                        <br></br>
+
 
                         <GoogleLogin
                             clientId="331387044870-4vcca4gks0t7qnhb4r2gcrv3uotikji5.apps.googleusercontent.com"
@@ -100,7 +105,7 @@ const Auth = (props) => {
                                     disabled={renderProps.disabled}
                                     startIcon={<Icon />}
                                     variant="contained">
-                                    Login with Google
+                                    Login to Rediscover with Google
                                 </Button>
                             )}
                             onSuccess={googleSuccess}
@@ -110,20 +115,18 @@ const Auth = (props) => {
                         />
                         <Grid container justify="flex-end">
                             <Grid item>
-                                <Button onClick={switchMode}>
-                                    {isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
-                                </Button>
                             </Grid>
                         </Grid>
 
 
-                        <br />
+                        <br /><br /><br />
                         <div>
-                            <img src={Binoculars} alt="binoculars" height="150px" />
+                            <img src={Binoculars} alt="binoculars" height="100px" />
                         </div>
-                    </form>
-                </Paper> <br />
+                    </form><br />
+                </Paper> 
             </Container>
+            
         </div >
 
     )

@@ -7,7 +7,7 @@ import * as api from '../api';
 export const getPosts = () => async (dispatch) => {
     try {
         const { data } = await api.fetchPosts();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH_ALL, payload: data });
 
     } catch (error) {
@@ -65,7 +65,7 @@ export const likePost = (id) => async (dispatch) => {
 export const getHaunted = () => async (dispatch) => {
     try {
         const { data } = await api.fetchHaunted();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
@@ -77,7 +77,7 @@ export const getHaunted = () => async (dispatch) => {
 export const getHistorical = () => async (dispatch) => {
     try {
         const { data } = await api.fetchHistorical();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
@@ -89,7 +89,7 @@ export const getHistorical = () => async (dispatch) => {
 export const getFilm = () => async (dispatch) => {
     try {
         const { data } = await api.fetchFilm();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
@@ -101,7 +101,7 @@ export const getFilm = () => async (dispatch) => {
 export const getNature = () => async (dispatch) => {
     try {
         const { data } = await api.fetchNature();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
@@ -113,7 +113,7 @@ export const getNature = () => async (dispatch) => {
 export const getMisc = () => async (dispatch) => {
     try {
         const { data } = await api.fetchMisc();
-        console.log("THE POST DTA IS", data)
+        console.log("THE POST DATA IS", data)
         dispatch ({ type: FETCH, payload: data });
     } catch (error) {
         console.log(error.message)
