@@ -6,17 +6,15 @@ import { useHistory } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import HomeIcon from '@material-ui/icons/Home';
-import ExploreIcon from '@material-ui/icons/Explore';
-import MenuBookIcon from '@material-ui/icons/MenuBook';
-import HelpIcon from '@material-ui/icons/Help';
-import GroupWorkIcon from '@material-ui/icons/GroupWork';
-import LocalFloristIcon from '@material-ui/icons/LocalFlorist';
-import ErrorIcon from '@material-ui/icons/Error';
-
 import Box from '@material-ui/core/Box';
 import { Link } from "react-router-dom";
 import { Toolbar, Typography, Button, Avatar } from "@material-ui/core";
+import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import { Link } from "react-router-dom";
+import icon from '../Auth/icon';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,25 +92,26 @@ export default function ScrollableTabsButtonForce() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default"  elevation="0">
-        <Tabs    
-          value={value}
-          classes={{ root: classes.root, scroller: classes.scroller }}
-          onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="on"
-          indicatorColor="default"
-          textColor="primary"
-          aria-label="scrollable force tabs example"
-        >
-          <Tab component={Link} label="Home" to ="/account" icon={<HomeIcon />} {...a11yProps(0)} />
-          <Tab component={Link} label="Explore" to="/explorer" icon={<ExploreIcon />} {...a11yProps(1)} />
-          <Tab component={Link} label="Haunted"  to="/haunted" icon={<ErrorIcon />} {...a11yProps(2)} />
-          <Tab component={Link} label="Historical" to="/historical" icon={<MenuBookIcon />} {...a11yProps(3)} />
-          <Tab component={Link} label="Film" to="/film" icon={<GroupWorkIcon />} {...a11yProps(4)} />
-          <Tab component={Link} label="Nature" to="/nature" icon={<LocalFloristIcon />} {...a11yProps(7)} />
-          <Tab component={Link} label="Misc" to="/misc" icon={<HelpIcon />} {...a11yProps(5)} />
-          <Toolbar className={classes.toolbar}>
+    
+        <AppBar position="static" color="default"  elevation="0">
+          <Tabs    
+            value={value}
+            classes={{ root: classes.root, scroller: classes.scroller }}
+            onChange={handleChange}
+            variant="scrollable"
+            scrollButtons="on"
+            indicatorColor="default"
+            textColor="primary"
+            aria-label="scrollable force tabs example"
+          >
+            <Tab component={Link} label="Home" to ="/account" icon={<FontAwesomeIcon icon={faHouseUser} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(0)} /> 
+            <Tab component={Link} label="Explore" to="/explorer" icon={<FontAwesomeIcon icon={faCompass} size="2x" fixedWidth></FontAwesomeIcon>}  {...a11yProps(1)} /> 
+            <Tab component={Link} label="Haunted"  to="/haunted" icon={<FontAwesomeIcon icon={faGhost} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(2)} /> 
+            <Tab component={Link} label="Historical" to="/historical" icon={<FontAwesomeIcon icon={faLandmark} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(3)} /> 
+            <Tab component={Link} label="Film" to="/film" icon={<FontAwesomeIcon icon={faFilm} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(4)} /> 
+            <Tab component={Link} label="Nature" to="/nature" icon={<FontAwesomeIcon icon={faTree} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(7)} /> 
+            <Tab component={Link} label="Misc" to="/misc" icon={<FontAwesomeIcon icon={faTags} size="2x" ></FontAwesomeIcon>} {...a11yProps(5)} /> 
+            <Toolbar className={classes.toolbar}>
                         {user ? (
                             <div className={classes.profile}>
                                 <Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
@@ -123,8 +122,8 @@ export default function ScrollableTabsButtonForce() {
                             <Button component={Link} to="/auth" variant="contained" color="primary" align="center">Welcome to Rediscover</Button>
                         )}
                     </Toolbar>
-        </Tabs>
-      </AppBar>
+          </Tabs>
+        </AppBar>
     </div>
   );
 }
