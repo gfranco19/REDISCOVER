@@ -21,7 +21,7 @@ const Uploads = () => {
     <div className="center">
       <div>
         <Container maxwidth="lg">
-          <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography>
+          <Typography className={classes.heading} variant="h2" align="center"  ><br /> </Typography>
           <Grow in>
             <Container>
               <Grid container justify="center" alignItems="stretch" spacing="1" >

@@ -28,8 +28,8 @@ const RenderHaunted = () => {
                 <PublicPosts setCurrentId={setCurrentId} />
               </Grid>
 
-              <Grid item xs={12} sm={4}>
-              </Grid>
+              {/* <Grid item xs={12} sm={4}>
+              </Grid> */}
             </Grid>
           </Container>
         </Grow>
