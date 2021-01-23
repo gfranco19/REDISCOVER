@@ -8,6 +8,7 @@ import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from './Input';
 import Binoculars from '../../assets/images/binocularsblack copy.png'
+import cityVideo from '../../components/welcomeVideo/welcome.mp4'
 
 const Auth = (props) => {
     const classes = useStyles();
@@ -52,7 +53,24 @@ const Auth = (props) => {
 
 
     return (
-        <div className='center'>
+        
+        <div className="video">
+        <video autoPlay muted loop
+            style={{
+
+                position: 'absolute',
+                width: '100%',
+                left: '50%',
+                top: '50%',
+                height: '100%',
+                objectFit: 'cover',
+                transform: 'translate(-50%, -50%',
+                zIndex: '-1'
+            }}>
+
+            <source src={cityVideo} type='video/mp4' />
+        </video>
+
             <Container component="main" maxwidth="xs">
 
                 <Paper className={classes.paper} elevation={3} style= {{marginTop : 'px'}} >
@@ -87,7 +105,7 @@ const Auth = (props) => {
                                     disabled={renderProps.disabled}
                                     startIcon={<Icon />}
                                     variant="contained">
-                                    Login with Google
+                                    Login to Rediscover with Google
                                 </Button>
                             )}
                             onSuccess={googleSuccess}
@@ -101,13 +119,14 @@ const Auth = (props) => {
                         </Grid>
 
 
-                        <br />
+                        <br /><br /><br />
                         <div>
-                            <img src={Binoculars} alt="binoculars" height="150px" />
+                            <img src={Binoculars} alt="binoculars" height="100px" />
                         </div>
-                    </form>
-                </Paper> <br />
+                    </form><br />
+                </Paper> 
             </Container>
+            
         </div >
 
     )
