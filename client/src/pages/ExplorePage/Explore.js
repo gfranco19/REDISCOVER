@@ -27,22 +27,18 @@ function Explore() {
         <h1>Explore!</h1>
         <div className="center">
         </div>
-        <br />
-
-
 
         <Container maxwidth="lg">
 
-          <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography>
+          <Typography className={classes.heading} variant="h2" align="center"><br /></Typography>
 
           <Grow in>
             <Container>
-              <Grid container justify="space-between" alignItems="stretch" spacing="3" >
-                <Grid item xs={12} sm={7}>
+              <Grid container justify="center" alignItems="stretch" spacing="1" >
+                <Grid item xs={12} sm={10} md={9} lg={9}>
                   <PublicPosts setCurrentId={setCurrentId} />
                 </Grid>
-                <Grid item xs={12} sm={4}>
-                </Grid>
+
               </Grid>
             </Container>
           </Grow>

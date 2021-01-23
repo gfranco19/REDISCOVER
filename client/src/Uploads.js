@@ -18,24 +18,24 @@ const Uploads = () => {
   }, [currentId, dispatch])
 
   return (
-    <div className="exploreBackground">
-    <div>
-    <Container maxwidth="lg">
-      <Typography className={classes.heading} variant="h2" align="center"><br /> </Typography>
-      <Grow in>
-        <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing="3" >
-            <Grid item xs={12} sm={6}>
-              <Posts setCurrentId={setCurrentId} />
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Form currentId={currentId} setCurrentId={setCurrentId} />
-            </Grid>
-          </Grid>
+    <div className="center">
+      <div>
+        <Container maxwidth="lg">
+          <Typography className={classes.heading} variant="h2" align="center"  ><br /> </Typography>
+          <Grow in>
+            <Container>
+              <Grid container justify="center" alignItems="stretch" spacing="1" >
+                <Grid item xs={12} sm={6}>
+                  <Posts setCurrentId={setCurrentId} />
+                </Grid>
+                <Grid item xs={12} sm={4}>
+                  <Form currentId={currentId} setCurrentId={setCurrentId} />
+                </Grid>
+              </Grid>
+            </Container>
+          </Grow>
         </Container>
-      </Grow>
-    </Container>
-    </div>
+      </div>
     </div>
   )
 }

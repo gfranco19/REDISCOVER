@@ -47,4 +47,10 @@ redux-thunk
 styled-components  
 web-vitals  
 
-## Contributors    
+## Contributors  
+Todd Wayment
+Shay Daniel
+Giovanny Franco
+Armando Galindo
+Chris Covarrubias
+

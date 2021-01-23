@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container, TextField, InputAdornment } from "@material-ui/core"
+import { Avatar, Button, Paper, Grid, Typography, Container } from "@material-ui/core"
+import { GoogleLogin } from "react-google-login";
+import Icon from "./icon"
 import useStyles from "./styles"
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Input from './Input';
@@ -9,7 +11,10 @@ import Input from './Input';
 const Auth = () => {
     const classes = useStyles();
     const [showPassword, setShowPassword ] = useState(false);
-    const isSignup = false;
+    // use within switchMode function for either signing up or a member with a callback also reset show password when user switches the mode // 
+    const [ isSignup, setIsSignup] = useState(false);
+    // make this switchable 
+    // const isSignup = true;
 
     // this will handle showing the users password if requested by user. using a previouse state with a callback function. if it's on turn it off if its off turn it on // 
     const handleShowPassword = () => setShowPassword((prevShowPassword) => ! prevShowPassword)
@@ -22,6 +27,19 @@ const Auth = () => {
 
     };
 
+    const switchMode = () => {
+        setIsSignup((previsSignUp) => !previsSignUp);
+        handleShowPassword(false);
+    };
+    // gain access to a full response // 
+   const googleSuccess = (res) => {
+
+   };
+
+   const googleFailure = () => {
+        console.log("Google Sign in was unsuccessful.")
+   };
+ 
 
     return (
        <Container component="main" maxwidth="xs">
@@ -42,10 +60,38 @@ const Auth = () => {
                             <Input name="email" label=" Email Address" handleChange={handleChange} type="email" />
                             <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
                             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
-                   </Grid>
+                            </Grid>
+
+                            <GoogleLogin 
+                                clientId="GOOGLE ID"
+                                render={(renderProps) =>(
+                                    <Button 
+                                    className={classes.googleButton} 
+                                    color="primary" 
+                      
+                                    fullWidth 
+                                    onClick={renderProps.onClick} 
+                                    disabled={renderProps.disabled} 
+                                    startIcon={<Icon />} 
+                                    variant="contained">
+                                        Sign up with Google
+                                    </Button>
+                                )}
+                                onSuccess={googleSuccess}
+                                onFailure={googleFailure}
+                                cookiePolicy="single_host_origin"
+
+                            />
                             <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                                 { isSignup ? 'Sign up for Rediscover' : 'Login to Rediscover' }
                             </Button>
+                            <Grid container justify="flex-end">
+                                <Grid item>
+                                    <Button onClick={switchMode}>
+                                        { isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
+                                    </Button>
+                                </Grid>
+                            </Grid>
                </form>
            </Paper>
        </Container>

@@ -101,7 +101,7 @@ export const getMisc = async (req, res) => {
     try {
         // async action 
         const postMessages = await PostMessage.find({
-            tags: "Other Fun Places"
+            tags: "Other Fun Place"
         });
 
         //console.log(postMessages);

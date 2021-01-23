@@ -11,7 +11,7 @@ import useStyles from './styles';
 import { createPost, updatePost } from '../../actions/posts';
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
+    const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', location:'', selectedFile: '' });
     
     // To find the posts will the same ID to be updated with currentID to find a specific post. //
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
@@ -44,7 +44,7 @@ const Form = ({ currentId, setCurrentId }) => {
 // This function will clear form after submit is click upon editing a post // 
     const clear = () => {
         setCurrentId(null);
-        setPostData({creator: '', title: '', message: '', tags: '', selectedFile: ''});
+        setPostData({creator: '', title: '', message: '', tags: '', location:'', selectedFile: ''});
     }
 
     return(
