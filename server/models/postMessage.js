@@ -8,6 +8,7 @@ const postSchema = mongoose.Schema({
     creator: String,
     tags: [String],
     location: String,
+    user: String,
     // FIND A WAY TO SHORTEN THE STRING //
     selectedFile: String, 
 
