@@ -25,7 +25,8 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: '#895b50'
+    
   },
   form: {
     marginTop: theme.spacing(3),
@@ -45,7 +46,8 @@ export default makeStyles((theme) => ({
 
   },
   googleButton: {
-    padding: '12px'
+    padding: '12px',
+    backgroundColor: '#497587'
     // marginBottom: theme.spacing(2),
   },
 }));
