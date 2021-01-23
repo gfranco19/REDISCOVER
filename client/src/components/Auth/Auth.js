@@ -55,7 +55,7 @@ const Auth = (props) => {
         <div className='center'>
             <Container component="main" maxwidth="xs">
 
-                <Paper className={classes.paper} elevation={3}  >
+                <Paper className={classes.paper} elevation={3} style= {{marginTop : 'px'}} >
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>
@@ -71,7 +71,9 @@ const Auth = (props) => {
                                 )}
                         </Grid>
 
+
                         <br></br>
+
 
                         <GoogleLogin
                             clientId="331387044870-4vcca4gks0t7qnhb4r2gcrv3uotikji5.apps.googleusercontent.com"
