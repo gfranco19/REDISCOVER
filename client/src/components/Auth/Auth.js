@@ -11,15 +11,13 @@ import Binoculars from '../../assets/images/binocularsblack copy.png'
 
 const Auth = (props) => {
     const classes = useStyles();
-    const [showPassword, setShowPassword] = useState(false);
-    // use within switchMode function for either signing up or a member with a callback also reset show password when user switches the mode // 
-    const [isSignup, setIsSignup] = useState(false);
+   
+    const [isSignup] = useState(false);
     const dispatch = useDispatch();
     const history = useHistory();
     // const isSignup = true;
 
-    // this will handle showing the users password if requested by user. using a previouse state with a callback function. if it's on turn it off if its off turn it on // 
-    const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword)
+    
 
     const handleSubmit = () => {
 
@@ -29,10 +27,7 @@ const Auth = (props) => {
 
     };
 
-    const switchMode = () => {
-        setIsSignup((previsSignUp) => !previsSignUp);
-        handleShowPassword(false);
-    };
+   
     // gain access to a full response // 
     const googleSuccess = async (res) => {
         // console.log(res)
@@ -74,19 +69,11 @@ const Auth = (props) => {
                                         <Input name="lastName" label="Last Name" handleChange={handleChange} half />
                                     </>
                                 )}
-                            <Input name="email" label=" Email Address" handleChange={handleChange} type="email" />
-                            <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
-                            {isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" />}
-
                         </Grid>
-                        {/* <br /> */}
-                        <hr></hr>
-                        {/* <br /> */}
 
 
-                        <Button type="submit" fullWidth variant="contained" color="default" className={classes.submit}>
-                            {isSignup ? 'Sign up for Rediscover' : 'Login'}
-                        </Button>
+                        <br></br>
+
 
                         <GoogleLogin
                             clientId="331387044870-4vcca4gks0t7qnhb4r2gcrv3uotikji5.apps.googleusercontent.com"
@@ -110,9 +97,6 @@ const Auth = (props) => {
                         />
                         <Grid container justify="flex-end">
                             <Grid item>
-                                <Button onClick={switchMode}>
-                                    {isSignup ? "Already a Member?" : "New to Rediscover? Join now!"}
-                                </Button>
                             </Grid>
                         </Grid>
 
