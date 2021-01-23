@@ -36,7 +36,7 @@ const Auth = () => {
     };
     // gain access to a full response // 
    const googleSuccess = async (res)  => {
-    // console.log(res)
+    console.log(res)
     const result = res?.profileObj; // will not get an error if res does not exists. //
     const token = res?.tokenId;
 
