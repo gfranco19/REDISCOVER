@@ -20,8 +20,8 @@ function Explore() {
 
   return (
     <div>
-      <NavTabs />
 
+      <NavTabs />
       <div className="nightBackground">
         <br /><br /> <br />
         <h1>Explore!</h1>
@@ -29,16 +29,13 @@ function Explore() {
         </div>
 
         <Container maxwidth="lg">
-
           <Typography className={classes.heading} variant="h2" align="center"><br /></Typography>
-
           <Grow in>
             <Container>
               <Grid container justify="center" alignItems="stretch" spacing="1" >
                 <Grid item xs={12} sm={10} md={9} lg={9}>
                   <PublicPosts setCurrentId={setCurrentId} />
                 </Grid>
-
               </Grid>
             </Container>
           </Grow>

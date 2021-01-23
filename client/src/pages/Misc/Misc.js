@@ -2,7 +2,8 @@ import React from "react";
 import "./Misc.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderMisc from "./RenderMisc";
-function Misc() {
+function Misc(props) {
+
     return (
         <div>
             <NavTabs />

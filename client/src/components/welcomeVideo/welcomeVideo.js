@@ -1,5 +1,4 @@
 import React from "react";
-// import cityVideo from '../../assets/images/4596414.mp4';
 import "./welcomeVideo.css"
 
 function welcomeVideo() {
@@ -10,7 +9,6 @@ function welcomeVideo() {
                     <source src=".4596414.mp4" type="video/ogg" />
                         Your browser does not support the video tag.
             </video>
-
         </div>
     );
 }
