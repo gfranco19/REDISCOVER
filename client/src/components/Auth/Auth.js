@@ -61,7 +61,8 @@ const Auth = () => {
                             <Input name="password" label=" Password" handleChange={handleChange} type={showPassword ? 'text' : showPassword} handleShowPassword={handleShowPassword} />
                             { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
                             </Grid>
-
+                            <br></br>
+                            <br></br>
                             <GoogleLogin 
                                 clientId="GOOGLE ID"
                                 render={(renderProps) =>(
