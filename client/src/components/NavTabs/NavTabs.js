@@ -11,10 +11,9 @@ import { Link } from "react-router-dom";
 import { Toolbar, Typography, Button, Avatar } from "@material-ui/core";
 import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import { Link } from "react-router-dom";
-import icon from '../Auth/icon';
+
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
