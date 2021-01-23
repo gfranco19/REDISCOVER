@@ -1,12 +1,14 @@
 .palmsBackground {
-    background: url("../../assets/images/palms.png") fixed;
+    background: url("../../assets/images/palms.png");
     position: absolute;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     top: 1;
     width: 100%;
-    min-height: 100%;
+    min-height: 100px;
     margin: 0;
+    background-attachment: fixed;
+
 }
 
 h1 {

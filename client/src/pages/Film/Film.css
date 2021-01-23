@@ -1,12 +1,13 @@
 .filmBackground {
     background: url("../../assets/images/film1.png") ;
     position: absolute;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     top: 1;
     width: 100%;
     min-height: 100%;
     margin: 0;
+    background-attachment: scroll;
 
 }
 
