@@ -8,6 +8,7 @@ import Film from "./pages/Film/Film";
 import Account from "./pages/Account/Account";
 import Misc from "./pages/Misc/Misc";
 import Nature from "./pages/Nature/Nature";
+import Murals from "./pages/Murals/Murals";
 import Explore from "./pages/ExplorePage/Explore"
 import Auth from "./components/Auth/Auth";
 
@@ -49,6 +50,11 @@ function App(props) {
           <Misc />
           <DarkMode theme={theme} setTheme={setTheme} />
         </Route >
+
+        <Route path="/murals" >
+          <Murals />
+          <DarkMode theme={theme} setTheme={setTheme} />
+        </Route>
 
         <Route path="/account" >
           <Account />
