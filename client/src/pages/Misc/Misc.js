@@ -3,7 +3,6 @@ import "./Misc.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderMisc from "./RenderMisc";
 function Misc(props) {
-
     return (
         <div>
             <NavTabs />

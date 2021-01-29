@@ -2,8 +2,7 @@ import React from "react";
 import "./Murals.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
 import RenderMurals from "./RenderMurals";
-function Murals (props) {
- 
+function Murals(props) {
     return (
         <div>
             <NavTabs />

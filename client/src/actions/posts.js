@@ -120,6 +120,18 @@ export const getMisc = () => async (dispatch) => {
     }
 };
 
+//get murals
+
+export const getMurals = () => async (dispatch) => {
+    try {
+        const { data } = await api.fetchMurals();
+        console.log("THE POST DATA IS", data)
+        dispatch ({ type: FETCH, payload: data });
+    } catch (error) {
+        console.log(error.message)
+    }
+};
+
 export const getUser = () => async (dispatch) => {
     try {
         const { data } = await api.fetchUser();
