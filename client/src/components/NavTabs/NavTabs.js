@@ -7,9 +7,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
+
 import { Link } from "react-router-dom";
 import { Toolbar, Typography, Button, Avatar } from "@material-ui/core";
-import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags } from '@fortawesome/free-solid-svg-icons';
+import { faHouseUser, faCompass, faGhost, faLandmark, faFilm, faTree, faTags, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
@@ -108,12 +110,20 @@ export default function ScrollableTabsButtonForce() {
             <Tab component={Link} label="Historical" to="/historical" icon={<FontAwesomeIcon icon={faLandmark} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(3)} /> 
             <Tab component={Link} label="Film" to="/film" icon={<FontAwesomeIcon icon={faFilm} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(4)} /> 
             <Tab component={Link} label="Nature" to="/nature" icon={<FontAwesomeIcon icon={faTree} size="2x" fixedWidth></FontAwesomeIcon>} {...a11yProps(7)} /> 
+            <Tab component={Link} label="Murals" to="/murals" icon={<FontAwesomeIcon icon={faPalette} size="2x" ></FontAwesomeIcon>} {...a11yProps(6)} /> 
             <Tab component={Link} label="Misc" to="/misc" icon={<FontAwesomeIcon icon={faTags} size="2x" ></FontAwesomeIcon>} {...a11yProps(5)} /> 
+
             <Toolbar className={classes.toolbar}>
                         {user ? (
-                            <div className={classes.profile}>
-                                <Avatar className={classes.grey} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
-                                {/* <Typography className={classes.userName} variant="h6">{user.result.name}</Typography> */}
+                          
+
+                            <div className={classes.profile} align='center' style={{ padding: '7px', marginBottom:'4px' }}>
+                            
+                                <Avatar className={classes.grey}  alt={user.result.name} src={user.result.imageUrl} style={{ marginBottom:'8px' }}>{user.result.name.charAt(0)}</Avatar>
+
+                                {/* <Typography className={classes.userName} style={{ padding: '7px', marginBottom:'1px' }}>{user.result.name}  
+                                </Typography> */}
+
                                 <Button variant="contained" className={classes.logout} color="secondary" onClick={logout} >Logout</Button>
                             </div>
                         ) : (

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import PublicPosts from "../../components/Posts/PublicPosts.js";
 import { useDispatch } from 'react-redux';
-import { getHaunted } from '../../actions/posts';
+import { getMurals } from '../../actions/posts';
 import { Container, Typography, Grow, Grid } from "@material-ui/core"
 import useStyles from '../../styles';
 
-const RenderHaunted = () => {
+const RenderMurals = () => {
   const [setCurrentId] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getHaunted());
+    dispatch(getMurals());
   }, [dispatch])
 
   return (
@@ -37,4 +37,4 @@ const RenderHaunted = () => {
   )
 }
 
-export default RenderHaunted;
+export default RenderMurals;

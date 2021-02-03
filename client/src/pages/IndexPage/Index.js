@@ -54,10 +54,10 @@ const Index = (props) => {
             </div>
             <Toolbar className={classes.toolbar}>
                 {user ? (
-                    <div className={classes.profile}>
-                        <Avatar className={classes.grey} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar>
-                        <Typography className={classes.userName} variant="h6">{user.result.name}</Typography>
-                        <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
+                    <div className={classes.profile} align='center' >
+                        {/* <Avatar className={classes.grey} alt={user.result.name} src={user.result.imageUrl}>{user.result.name.charAt(0)}</Avatar> */}
+                        <Typography className={classes.userName} variant="h4" style={{ color: 'white', fontFamily: 'oswald'}}>{user.result.name}</Typography>
+                        <Button variant="contained" className={classes.logout} style={{ padding: '15px', width: '150px'}} color="default" onClick={logout} >Logout</Button>
                         </div>
                 ) : (
                         <Button component={Link} to="/auth" variant="contained" color="default" align="center" style={{ padding: '13px', fontFamily: 'fira mono', fontSize: '.85rem' }}>Welcome to Rediscover</Button>

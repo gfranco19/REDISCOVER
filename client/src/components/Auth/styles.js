@@ -47,7 +47,12 @@ export default makeStyles((theme) => ({
   },
   googleButton: {
     padding: '12px',
-    backgroundColor: '#497587'
-    // marginBottom: theme.spacing(2),
-  },
+    backgroundColor: '#497587',
+    "&:hover": {
+      background: "#355664"
+    },
+      },
+
+  
+
 }));
