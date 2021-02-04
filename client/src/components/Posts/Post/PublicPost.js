@@ -5,7 +5,8 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import moment from 'moment';
 import { useDispatch } from 'react-redux'
 import { likePost } from '../../../actions/posts';
-
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const PublicPost = ({ post }) => {
     const classes = useStyles();
@@ -17,7 +18,15 @@ const PublicPost = ({ post }) => {
                 boxShadow: "0 16px 40px -6px rgba(0,0,0,1.0)",               
             }}
         >
-            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
+                     <Zoom >
+            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} 
+                    style={{
+                        // margin: "auto",
+                        width: "100%",
+                        height: "100%",
+                    }}
+            />
+            </Zoom>
             <div className={classes.overlay} >
                 <Typography variant="h6" style={{ fontFamily: 'oswald' }}> {post.user}</Typography>
                 <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
