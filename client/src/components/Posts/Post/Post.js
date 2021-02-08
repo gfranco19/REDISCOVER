@@ -6,6 +6,8 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import moment from 'moment';
 import { useDispatch } from 'react-redux'
 import { deletePost } from '../../../actions/posts';
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
@@ -17,8 +19,16 @@ const Post = ({ post, setCurrentId }) => {
                 // margin: "auto",
                 boxShadow: "0 11px 40px -6px rgba(0,0,0,1.0)",
             }}
-        >
-            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
+        >   
+            <Zoom >
+            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} 
+                    style={{
+                        // margin: "auto",
+                        width: "100%",
+                        height: "100%",
+                    }}
+            />
+            </Zoom>
             <div className={classes.overlay} >
                 <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
             </div>
