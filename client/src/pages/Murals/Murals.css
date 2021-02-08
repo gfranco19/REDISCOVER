@@ -1,0 +1,18 @@
+.muralsBackground {
+    background: url("../../assets/images/murals.png") fixed;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 1;
+    width: 100%;
+    min-height: 130%;
+    margin: 0;
+}
+
+@media screen and (max-width: 765px) {  
+    
+    .muralsBackground {
+        background: none;
+
+}
+}

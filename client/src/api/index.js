@@ -25,4 +25,6 @@ export const fetchNature = () => axios.get(`${url}/nature`);
 
 export const fetchMisc = () => axios.get(`${url}/misc`);
 
+export const fetchMurals = () => axios.get(`${url}/murals`);
+
 export const fetchUser = (user) => axios.get(`${url}/${user}`);

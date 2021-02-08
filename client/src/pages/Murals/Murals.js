@@ -1,21 +1,21 @@
 import React from "react";
-import "./Misc.css";
+import "./Murals.css";
 import NavTabs from "../../components/NavTabs/NavTabs";
-import RenderMisc from "./RenderMisc";
-function Misc(props) {
+import RenderMurals from "./RenderMurals";
+function Murals(props) {
     return (
         <div>
             <NavTabs />
-            <div className="redlandsBackground">
+            <div className="muralsBackground">
                 <br /> <br /><br />
-                <h1>More Fun Places</h1>
+                <h1>Murals</h1>
                 <div className="center">
                 </div>
-                <RenderMisc />
+                <RenderMurals />
             </div>
+ 
         </div>
     );
 }
 
-export default Misc;
-
+export default Murals;
