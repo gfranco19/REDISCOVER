@@ -1,95 +1,63 @@
-# Rediscover App  
+# REDISCOVER  
 
-## Table of Contents
-1. [ Description ](#desc)
-2. [ Installation ](#install)
-3. [ Usage ](#usage)
-4. [ License ](#lic)
-5. [ Contributers ](#contributers)
-    
-<a name="desc"></a>
-## 1. Description
-Rediscover is a react application that allows you to discover the most wonderful of places. In this app, you will be allowed to post pictures and location of places you visited in. 
-    
-<a name="install"></a>
-## 2. Installation
-1. Clone Repo 
-2. Install Dependencies 
-3. Connect to MongoDB. 
-    
-<a name="usage"></a>
-## 3. Usage
-Image Hosting Site
-    
-<a name="lic"></a>
-## 4. License
-MIT   
-    
-<a name="quest"></a>
-## 5. Contributors 
+# Description
+## Welcome to a community of urban explorers, discovering the rich and historical world around us - right in our own backyards.
+
+*Rediscover is a React application that allows a user to discover and share interesting and cool places near them.*
+
+<br />
+
+## View:
+
+Visit Rediscover [here](https://rediscoverapp.netlify.app/ "Link to Rediscover").
+       
+<br />
+
+## Technologies used:  
+<br />
+
+| Server side |           |  
+| ------------| --------- |
+| body-parser | mongoose  | 
+| cors        | nodemon   | 
+| express     | react-dom | 
+
+<br />
+
+| Client side             |                   |                  |
+| -------------           | -------------     | --------------   |
+| axios                   | react             | react-spring     |
+| bootstrap               | react-bootstrap   | redux            |
+| Google API              | react-dom         | redux-thunk      |
+| Google Login            | react-file-base64 | styled-components|
+| Google O-Authorization  | react-redux       | testing-library  |
+| Material UI             | react-router-dom  | UnSplash         |
+| moment                  | react-scripts     | web-vitals       |
  
-Please visit our GitHubs to view all of our projects:
-    
-    https://github.com/shaydaniel7
-    https://github.com/gfranco19
-    https://github.com/Tbonexas
-    https://github.com/CdmMandalorian
-    https://github.com/covo40
+<br />
 
-Questions
-Contact us at:
-    shaysusan67@gmail.com
-    gsnail19@gmail.com
-    theclash090@gmail.com
-    egalindounited@gmail.com
-    chris.covarrubias40@gmail.com
- 
+## Screenshots 
 
-## LIVE LINK: 
-<a href="https://rediscoverapp.netlify.app/">Rediscover</a>
-
-
-## Screenshots of Rediscover:
 <img src="./client/src/assets/images/rediscoverss(1).png">
+
 <img src="./client/src/assets/images/rediscoverss(2).png">
+
 <img src="./client/src/assets/images/rediscoverss(3).png">
 
-## LIVE DEMO GIF's OF Rediscover:
 <img src="./client/src/assets/images/rediscover.gif">
 
-## Repository:  
-[Rediscover](https://github.com/gfranco19/finalProject)  
+<br />
 
-## Credits  
-*server side:*  
-body-parser  
-cors  
-express  
-mongoose  
-nodemon  
+## License
 
-*client side:*  
-Google API  
-Google Login  
-Google O-Authorization  
-UnSplash(images)  
-material-ui/core  
-material-ui/icons  
-testing-library/jest-dom  
-testing-library/react  
-testing-library/user-event  
-axios  
-bootstrap  
-moment  
-react  
-react-bootstrap
-react-dom  
-react-file-base64  
-react-redux  
-react-router-dom  
-react-scripts  
-react-spring  
-redux
-redux-thunk  
-styled-components  
-web-vitals  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<br />
+
+## Contributors 
+ 
+* Shay Daniel - [Github](https://github.com/shaydaniel7/), [Email](mailto:"shay@shaydaniel.com")
+* Giovanny Franco - [Github](https://github.com/gfranco19), [Email](mailto:"gsnail19@gmail.com")
+* Todd Wayment - [Github](https://github.com/Tbonexas), [Email](mailto:"theclash090@gmail.com")
+* Armando Galindo - [Github](https://www.github.com/CdmMandaloria), [Email](mailto:"egalindounited@gmail.com")
+* Chris Covarrubias - [Github](https://github.com/covo40), [Email](mailto:"egalindounited@gmail.com")
+
