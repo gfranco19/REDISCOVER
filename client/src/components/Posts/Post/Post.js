@@ -30,7 +30,7 @@ const Post = ({ post, setCurrentId }) => {
             />
             </Zoom>
             <div className={classes.overlay} >
-                <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
+                <Typography variant="body2" style={{ textShadow: '2px 2px 1px white', fontWeight: '600', color: 'black' }}> {moment(post.createdAt).fromNow()}</Typography>
             </div>
 
             <div className={classes.overlay2} >

@@ -28,8 +28,8 @@ const PublicPost = ({ post }) => {
             />
             </Zoom>
             <div className={classes.overlay} >
-                <Typography variant="h6" style={{ fontFamily: 'oswald' }}> {post.user}</Typography>
-                <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
+                <Typography variant="h6" style={{ fontFamily: 'oswald', textShadow: '2px 2px 1px white', color: 'black' }}> {post.user}</Typography>
+                <Typography variant="body2" style={{ textShadow: '2px 2px 1px white', fontWeight: '600', color: 'black' }}> {moment(post.createdAt).fromNow()}</Typography>
             </div>
 
             <div className={classes.details}>

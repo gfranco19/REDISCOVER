@@ -49,6 +49,10 @@ h5 {
     background-color: none;
 }
 
+.MuiGrid-spacing-xs-1 {
+    margin: 5px !important;
+}
+
 
 @media screen and (max-width: 765px) {
     
