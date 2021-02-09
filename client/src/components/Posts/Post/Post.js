@@ -19,15 +19,15 @@ const Post = ({ post, setCurrentId }) => {
                 // margin: "auto",
                 boxShadow: "0 11px 40px -6px rgba(0,0,0,1.0)",
             }}
-        >   
+        >
             <Zoom >
-            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} 
+                <CardMedia className={classes.media} image={post.selectedFile} title={post.title}
                     style={{
                         // margin: "auto",
                         width: "100%",
                         height: "100%",
                     }}
-            />
+                />
             </Zoom>
             <div className={classes.overlay} >
                 <Typography variant="body2"> {moment(post.createdAt).fromNow()}</Typography>
