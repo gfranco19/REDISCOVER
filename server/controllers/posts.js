@@ -112,6 +112,23 @@ export const getMisc = async (req, res) => {
     }
 }
 
+export const getMurals = async (req, res) => {
+    try {
+        // async action 
+        const postMessages = await PostMessage.find({
+            tags: "Murals"
+        });
+
+        //console.log(postMessages);
+        // array of all filtered
+        return res.status(200).json( postMessages )
+    } catch (error) {
+        return res.status(404).json({ message: error.message }); 
+    }
+}
+
+
+
 
 
 // update an existing post // 

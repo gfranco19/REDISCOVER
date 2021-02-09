@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getPosts, createPost, updatePost, deletePost, likePost, getHaunted, getFilm, getHistorical, getNature, getMisc, getUser} from '../controllers/posts.js'
+import { getPosts, createPost, updatePost, deletePost, likePost, getHaunted, getFilm, getHistorical, getNature, getMisc, getMurals, getUser} from '../controllers/posts.js'
 
 
 const router = express.Router();
@@ -20,6 +20,8 @@ router.get('/film', getFilm );
 router.get('/historical', getHistorical );
 router.get('/nature', getNature );
 router.get('/misc', getMisc );
+router.get('/murals', getMurals);
+
 router.get('/:user', getUser);
 
 
