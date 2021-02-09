@@ -15,17 +15,17 @@ const PublicPost = ({ post }) => {
         <Card className={classes.card}
             style={{
                 margin: "auto",
-                boxShadow: "0 16px 40px -6px rgba(0,0,0,1.0)",               
+                boxShadow: "0 16px 40px -6px rgba(0,0,0,1.0)",
             }}
         >
-                     <Zoom >
-            <CardMedia className={classes.media} image={post.selectedFile} title={post.title} 
+            <Zoom >
+                <CardMedia className={classes.media} image={post.selectedFile} title={post.title}
                     style={{
                         // margin: "auto",
                         width: "100%",
                         height: "100%",
                     }}
-            />
+                />
             </Zoom>
             <div className={classes.overlay} >
                 <Typography variant="h6" style={{ fontFamily: 'oswald' }}> {post.user}</Typography>
